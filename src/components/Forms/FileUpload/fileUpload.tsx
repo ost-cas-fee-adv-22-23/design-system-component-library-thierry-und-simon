@@ -1,19 +1,9 @@
 import React, { FC } from "react";
 import { Icon, IconType } from "../../Icon/Icon";
 
-export type FileUploadProps = {
-  type: "text" | "password" | "email";
-  label: string;
-  id: string;
-  placeholder: string;
-};
+export type FileUploadProps = {};
 
-export const FileUpload: FC<FileUploadProps> = ({
-  label,
-  type,
-  id,
-  placeholder,
-}) => {
+export const FileUpload: FC<FileUploadProps> = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full mx-l">
       <label
