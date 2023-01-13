@@ -13,7 +13,7 @@ export const Input: FC<InputProps> = ({ label, type, id, placeholder }) => {
 
   return (
     <div>
-      <label className="block text-slate-700 font-bold " htmlFor={id}>
+      <label className="block text-slate-700 font-semibold " htmlFor={id}>
         {label}
       </label>
       <div className="relative">

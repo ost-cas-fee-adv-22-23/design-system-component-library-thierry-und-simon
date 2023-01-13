@@ -6,10 +6,28 @@ export default {
   title: "Example/Input",
   component: Input,
   argTypes: {
-    children: {},
+    label: { control: "text" },
+    type: {
+      control: "radio",
+      options: ["text", "email", "password"],
+    },
   },
 } as ComponentMeta<typeof Input>;
 
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
-export const InputComponent = Template.bind({});
+export const TextInput = Template.bind({});
+TextInput.args = {
+  type: "text",
+  label: "Text Input",
+};
+export const EmailInput = Template.bind({});
+EmailInput.args = {
+  type: "email",
+  label: "Email Input",
+};
+export const PasswordInput = Template.bind({});
+PasswordInput.args = {
+  type: "password",
+  label: "Password Input",
+};
