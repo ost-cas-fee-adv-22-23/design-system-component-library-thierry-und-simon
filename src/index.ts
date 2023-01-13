@@ -5,3 +5,5 @@ export * from "./components/User/user";
 export * from "./components/UserImage/userImage";
 export * from "./components/Icon/Icon";
 export * from "./components/InteractionButtons/interactionButton";
+export * from "./components/Forms/Input/input";
+export * from "./components/Forms/Textarea/textarea";
