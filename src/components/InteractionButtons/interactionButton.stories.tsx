@@ -15,7 +15,25 @@ const Template: ComponentStory<typeof InteractionButton> = (args) => (
   <InteractionButton {...args} />
 );
 
-export const IconLinkComponent = Template.bind({});
-IconLinkComponent.args = {
+export const IconLinkComponentLike = Template.bind({});
+IconLinkComponentLike.args = {
   type: InteractionButtonType.like,
+};
+export const IconLinkComponentLikeCount = Template.bind({});
+IconLinkComponentLikeCount.args = {
+  type: InteractionButtonType.like,
+  count: 5,
+};
+export const IconLinkComponentComment = Template.bind({});
+IconLinkComponentComment.args = {
+  type: InteractionButtonType.comment,
+};
+export const IconLinkComponentCommentCount = Template.bind({});
+IconLinkComponentCommentCount.args = {
+  type: InteractionButtonType.comment,
+  count: 5,
+};
+export const IconLinkComponentCopy = Template.bind({});
+IconLinkComponentCopy.args = {
+  type: InteractionButtonType.share,
 };
