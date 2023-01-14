@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Textarea } from "./textarea";
 
 export default {
-  title: "Example/Textarea",
+  title: "Forms/Textarea",
   component: Textarea,
   argTypes: {
     cols: { control: "number" },

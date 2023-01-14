@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Input } from "./input";
 
 export default {
-  title: "Example/Input",
+  title: "Forms/Input",
   component: Input,
   argTypes: {
     label: { control: "text" },

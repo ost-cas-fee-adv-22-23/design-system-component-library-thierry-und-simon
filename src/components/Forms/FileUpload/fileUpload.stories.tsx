@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { FileUpload } from "./fileUpload";
 
 export default {
-  title: "Example/FileUpload",
+  title: "Forms/FileUpload",
   component: FileUpload,
   argTypes: {
     children: {},
