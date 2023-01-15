@@ -26,7 +26,7 @@ export const Input: FC<InputProps> = ({ label, type, id, placeholder }) => {
           </div>
         )}
         <input
-          className="w-full bg-slate-50 p-2 text-[20px] text-slate-700 font placeholder:text-slate-500 rounded border border-slate-200 hover:border-slate-300 hover:border-2 focus:border-2 focus:outline-none focus:border-violet-600"
+          className="w-full bg-slate-50 p-2 text-[20px] text-slate-700 font placeholder:text-slate-500 rounded border border-slate-200 hover:border-violet-600 hover:border-1 focus:border-2 focus:outline-none focus:border-violet-600"
           id={id}
           type={showPassword && type === "password" ? "text" : type}
           placeholder={placeholder}
