@@ -7,3 +7,6 @@ export * from "./components/Icon/Icon";
 export * from "./components/InteractionButtons/interactionButton";
 export * from "./components/Forms/Input/input";
 export * from "./components/Forms/Textarea/textarea";
+export * from "./components/Forms/FileUpload/fileUpload";
+export * from "./components/Logo/logo";
+export * from "./components/Modal/modal";
