@@ -30,6 +30,7 @@ const thierrySimonMumbelConfig = {
       },
       padding: {
         '3/4': '66.6666%',
+        '16/9': '56.6666%',
       },
       borderRadius: {
         md: '6px',
