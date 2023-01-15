@@ -12,6 +12,7 @@ export default {
       options: ["default", "settings", "upload"],
     },
     title: { control: "text" },
+    initialState: { control: "boolean" },
   },
 } as ComponentMeta<typeof Modal>;
 
@@ -21,14 +22,25 @@ const Template: ComponentStory<typeof Modal> = (args) => (
 
 export const ModalComponent = Template.bind({});
 ModalComponent.args = {
-  type: "default",
+  device: "desktop",
+  initialState: true,
+  title: "Modal",
+};
+export const ModalComponentMobile = Template.bind({});
+ModalComponentMobile.args = {
+  device: "mobile",
+  initialState: true,
   title: "Modal",
 };
 export const ModalComponentSettings = Template.bind({});
 ModalComponentSettings.args = {
-  type: "settings",
+  device: "mobile",
+  initialState: true,
+  title: "Settings",
 };
 export const ModalComponentUpload = Template.bind({});
 ModalComponentUpload.args = {
-  type: "upload",
+  device: "mobile",
+  initialState: true,
+  title: "Bild hochladen",
 };

@@ -1,22 +1,30 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { Icon, IconType } from "../Icon/Icon";
 
+enum ModalDevice {
+  mobile = "mobile",
+  desktop = "desktop",
+}
+
 export type ModalProps = {
-  type: "default" | "settings" | "upload";
-  device: "mobile" | "desktop";
+  device: ModalDevice;
   title: string;
   children: React.ReactNode;
+  initialState: Boolean;
 };
 
 const classes = {
-  wrapper: "flex justify-center align-center w-screen h-screen bg-slate-100",
-  modal: "w-10/12 m-xl bg-white rounded-lg",
-  modalD: (device: any) => {
+  wrapper: (open: Boolean) => {
+    return open
+      ? "flex justify-center align-center w-screen h-screen bg-slate-100"
+      : "hidden";
+  },
+  modal: (device: ModalDevice) => {
     const classesMap = {
-      mobile: "w-10/12",
+      mobile: "w-10/12 max-w-md",
       desktop: "w-1/2",
     };
-    return "w-10/12 m-xl bg-white rounded-lg";
+    return `${classesMap[device]} m-xl bg-white rounded-lg`;
   },
   title:
     "flex items-center justify-between h-[60px] px-l bg-violet-600 rounded-t-lg",
@@ -24,13 +32,21 @@ const classes = {
   bodyContent: "p-l",
 };
 
-export const Modal: FC<ModalProps> = ({ children, title, type, device }) => {
+export const Modal: FC<ModalProps> = ({
+  children,
+  title,
+  device,
+  initialState,
+}) => {
+  const [open, setOpen] = useState(initialState);
   return (
-    <div className={classes.wrapper}>
-      <section className={classes.modal}>
+    <div className={classes.wrapper(open)}>
+      <section className={classes.modal(device)}>
         <section className={classes.title}>
           <h3 className={classes.titleContent}>{title}</h3>
-          <Icon type={IconType.cancel} color="#ffffff" />
+          <span onClick={() => setOpen(false)}>
+            <Icon type={IconType.cancel} color="#ffffff" />
+          </span>
         </section>
         <section className={classes.bodyContent}>{children}</section>
       </section>
