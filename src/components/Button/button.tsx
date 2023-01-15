@@ -18,12 +18,14 @@ export type ButtonProps = {
   color: ButtonColor;
   label: string;
   children?: ReactNode;
+  grow?: boolean;
 };
 
 export const Button: FC<ButtonProps> = ({
   color,
   size,
   label,
+  grow,
   children,
   ...props
 }) => {
@@ -59,15 +61,19 @@ export const Button: FC<ButtonProps> = ({
   return (
     <button
       type='button'
-      className={`${colorClasses} ${spacingClasses} text-sm text-center text-white border-4 border-white  transition flex items-center`}
+      className={`${colorClasses} ${spacingClasses} ${
+        grow && 'grow'
+      } text-sm text-center text-white border-4 border-white  transition flex items-center box-border`}
       {...props}
     >
       {size == 'nolabel' ? (
         <Icon type={IconType.mumble} color='white' />
       ) : (
-        <span className='mx-auto'>{label}</span>
+        <span className='mx-auto flex'>
+          {label}
+          {children}
+        </span>
       )}
-      {children}
     </button>
   );
 };

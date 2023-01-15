@@ -2,7 +2,7 @@ import React, { FC, ReactNode } from 'react';
 import { Button, ButtonColor, ButtonSize } from '../Button/button';
 import { UserImage, UserImageSizeType } from '../UserImage/userImage';
 import { IconLink, IconLinkType } from '../IconLink/iconLink';
-import { IconType } from '../Icon/Icon';
+import { Icon, IconType } from '../Icon/Icon';
 
 export enum SizeType {
   SM = 'sm',
@@ -60,17 +60,25 @@ export const User: FC<UserProps> = ({ type, ...props }) => {
           </div>
         </div>
       ) : (
-        <div className='flex  bg-white rounded-xl p-s'>
-          <div className='flex flex-col items-center'>
-            <UserImage type={UserImageSizeType.LG} />
-            <p className='text-base text-center mt-s mb-xs'>Display Name</p>
-            <p className='text-xs text-violet-600 text-center mb-s'>Username</p>
-            <div className='flex justify-items-stretch'>
-              <Button
-                label='Follow'
-                color={ButtonColor.violet}
-                size={ButtonSize.medium}
-              ></Button>
+        <div className='flex  w-auto grow-0'>
+          <div className='grow-0 bg-white rounded-xl  p-s'>
+            <div className='flex flex-col items-center'>
+              <UserImage type={UserImageSizeType.LG} />
+              <p className='text-base text-center mt-s mb-xs'>Display Name</p>
+              <p className='text-xs text-violet-600 text-center mb-s'>
+                Username
+              </p>
+              <div className='flex justify-items-stretch'>
+                <Button
+                  label='Follow'
+                  color={ButtonColor.violet}
+                  size={ButtonSize.medium}
+                >
+                  <span className='ml-xs'>
+                    <Icon type={IconType.mumble} color='white' />
+                  </span>
+                </Button>
+              </div>
             </div>
           </div>
         </div>

@@ -8,6 +8,12 @@ export default {
   argTypes: {
     type: { control: 'radio', options: SizeType },
   },
+  parameters: {
+    backgrounds: {
+      default: '',
+      values: [{ name: 'mumble', value: '#F1F5F9' }],
+    },
+  },
 } as ComponentMeta<typeof User>;
 
 const Template: ComponentStory<typeof User> = (args) => <User {...args} />;
@@ -35,4 +41,7 @@ UserXL.args = {
 export const UserTile = Template.bind({});
 UserTile.args = {
   type: SizeType.TILE,
+};
+UserTile.parameters = {
+  backgrounds: { default: 'mumble' },
 };
