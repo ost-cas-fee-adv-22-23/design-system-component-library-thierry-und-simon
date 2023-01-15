@@ -8,7 +8,7 @@ import { Textarea } from '../Forms/Textarea/textarea';
 import { Button, ButtonSize, ButtonColor } from '../Button/button';
 
 export default {
-  title: 'Mocks/Card',
+  title: 'Layout/Card',
   component: Card,
   parameters: {
     backgrounds: {

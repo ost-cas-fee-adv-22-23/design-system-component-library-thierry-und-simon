@@ -3,7 +3,7 @@ import React from 'react';
 import { ProfileHeader } from './ProfileHeader';
 
 export default {
-  title: 'Mocks/ProfileHeader',
+  title: 'Layout/ProfileHeader',
   component: ProfileHeader,
 } as ComponentMeta<typeof ProfileHeader>;
 
