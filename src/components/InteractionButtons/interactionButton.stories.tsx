@@ -1,13 +1,13 @@
-import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { InteractionButton, InteractionButtonType } from "./interactionButton";
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { InteractionButton, InteractionButtonType } from './interactionButton';
 
 export default {
-  title: "Example/InteractionButton",
+  title: 'Components/InteractionButton',
   component: InteractionButton,
   argTypes: {
-    type: { control: "radio", options: InteractionButtonType },
-    count: { control: "number" },
+    type: { control: 'radio', options: InteractionButtonType },
+    count: { control: 'number' },
   },
 } as ComponentMeta<typeof InteractionButton>;
 

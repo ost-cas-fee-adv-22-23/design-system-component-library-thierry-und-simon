@@ -1,9 +1,9 @@
-import React, { Children } from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Link } from "./link";
+import React, { Children } from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Link } from './link';
 
 export default {
-  title: "Example/Link",
+  title: 'Components/Link',
   component: Link,
   argTypes: {
     children: {},

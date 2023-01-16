@@ -20,6 +20,10 @@ export default {
 
 const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
 
+export const emptyCard = Template.bind({});
+
+export const emptyCardInline = Template.bind({});
+
 export const exampleCard = Template.bind({});
 
 export const exampleCardInline = Template.bind({});
@@ -27,6 +31,15 @@ export const exampleCardInline = Template.bind({});
 export const writeCard = Template.bind({});
 
 export const writeCardInline = Template.bind({});
+
+emptyCard.args = {
+  showProfileImage: true,
+};
+
+emptyCardInline.args = {
+  showProfileImage: false,
+  roundedBorders: false,
+};
 
 exampleCard.args = {
   showProfileImage: true,
@@ -120,16 +133,19 @@ writeCard.args = {
       <h4 className='mb-s'>Hey, was läuft?</h4>
       <Textarea placeholder='Deine Meinung zählt!'></Textarea>
       <div className='flex mt-xs'>
-        <Button
-          size={ButtonSize.medium}
-          color={ButtonColor.slate}
-          grow={true}
-          label='Bild hochladen'
-        >
-          <span className='ml-xs'>
-            <Icon type={IconType.upload} color='white' />
-          </span>
-        </Button>
+        <div className='mr-s flex grow'>
+          <Button
+            size={ButtonSize.medium}
+            color={ButtonColor.slate}
+            grow={true}
+            label='Bild hochladen'
+          >
+            <span className='ml-xs'>
+              <Icon type={IconType.upload} color='white' />
+            </span>
+          </Button>
+        </div>
+
         <Button
           size={ButtonSize.medium}
           color={ButtonColor.violet}
@@ -156,20 +172,21 @@ writeCardInline.args = {
       </div>
 
       <div className='flex mt-xs'>
-        <Button
-          size={ButtonSize.medium}
-          color={ButtonColor.slate}
-          grow={true}
-          label='Bild hochladen'
-        >
-          <span className='ml-xs'>
-            <Icon type={IconType.upload} color='white' />
-          </span>
-        </Button>
+        <div className='mr-s flex grow'>
+          <Button
+            size={ButtonSize.medium}
+            color={ButtonColor.slate}
+            label='Bild hochladen'
+          >
+            <span className='ml-xs'>
+              <Icon type={IconType.upload} color='white' />
+            </span>
+          </Button>
+        </div>
+
         <Button
           size={ButtonSize.medium}
           color={ButtonColor.violet}
-          grow={true}
           label='Absenden'
         >
           <span className='ml-xs'>

@@ -1,14 +1,14 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import React from "react";
-import { Typography, TypographyType } from "./typo";
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import React from 'react';
+import { Typography, TypographyType } from './typo';
 
 export default {
-  title: "Example/Typography",
+  title: 'Components/Typography',
   component: Typography,
   argTypes: {
     type: {
-      options: ["h1", "h2", "h3", "h4", "p"],
-      control: { type: "select" },
+      options: ['h1', 'h2', 'h3', 'h4', 'p'],
+      control: { type: 'select' },
     },
   },
 } as ComponentMeta<typeof Typography>;

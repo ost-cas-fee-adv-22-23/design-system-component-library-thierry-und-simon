@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from './button';
 
 export default {
-  title: 'Example/Button',
+  title: 'Components/Button',
   component: Button,
   argTypes: {
     size: { control: 'radio', options: ['medium', 'large', 'nolabel'] },

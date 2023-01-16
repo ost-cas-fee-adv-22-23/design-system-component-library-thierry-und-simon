@@ -1,14 +1,14 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import React from "react";
-import { Header, HeaderType } from "./Header";
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import React from 'react';
+import { Header, HeaderType } from './Header';
 
 export default {
-  title: "Example/Header",
+  title: 'Components/Header',
   component: Header,
   argTypes: {
     type: {
-      options: ["h1", "h2", "h3", "h4"],
-      control: { type: "select" },
+      options: ['h1', 'h2', 'h3', 'h4'],
+      control: { type: 'select' },
     },
   },
 } as ComponentMeta<typeof Header>;

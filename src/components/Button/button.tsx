@@ -18,14 +18,12 @@ export type ButtonProps = {
   color: ButtonColor;
   label: string;
   children?: ReactNode;
-  grow?: boolean;
 };
 
 export const Button: FC<ButtonProps> = ({
   color,
   size,
   label,
-  grow,
   children,
   ...props
 }) => {
@@ -33,15 +31,15 @@ export const Button: FC<ButtonProps> = ({
   switch (color) {
     case 'violet':
       colorClasses =
-        'bg-violet-600  hover:bg-violet-700 hover:border-violet-100 active:border-violet-200';
+        'bg-violet-600  hover:bg-violet-700 hover:outline-violet-100 active:outline-violet-200';
       break;
     case 'slate':
       colorClasses =
-        'bg-slate-600 hover:bg-slate-700 hover:border-slate-100  active:border-slate-200';
+        'bg-slate-600 hover:bg-slate-700 hover:outline-slate-100  active:outline-slate-200';
       break;
     case 'gradiant':
       colorClasses =
-        'bg-gradient-to-r from-pink-400 to-violet-700 hover:via-violet-700 hover:to-violet-700 hover:border-violet-100 active:border-violet-200';
+        'bg-gradient-to-r from-pink-400 to-violet-700 hover:via-violet-700 hover:to-violet-700 hover:outline-violet-100 active:outline-violet-200';
       break;
   }
 
@@ -61,9 +59,7 @@ export const Button: FC<ButtonProps> = ({
   return (
     <button
       type='button'
-      className={`${colorClasses} ${spacingClasses} ${
-        grow && 'grow'
-      } text-sm text-center text-white border-4 border-white  transition flex items-center box-border`}
+      className={`${colorClasses} ${spacingClasses} grow text-sm text-center text-white outline outline-transparent outline-4 transition flex items-center box-border`}
       {...props}
     >
       {size == 'nolabel' ? (

@@ -1,13 +1,13 @@
-import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { IconLink, IconLinkType } from "./iconLink";
-import { IconType } from "../Icon/Icon";
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { IconLink, IconLinkType } from './iconLink';
+import { IconType } from '../Icon/Icon';
 
 export default {
-  title: "Example/IconLink",
+  title: 'Components/IconLink',
   component: IconLink,
   argTypes: {
-    type: { control: "radio", options: IconLinkType },
+    type: { control: 'radio', options: IconLinkType },
   },
 } as ComponentMeta<typeof IconLink>;
 
@@ -19,19 +19,19 @@ export const IconLinkComponentUsername = Template.bind({});
 IconLinkComponentUsername.args = {
   type: IconLinkType.violet,
   icon: IconType.mumble,
-  text: "Username",
+  text: 'Username',
 };
 
 export const IconLinkComponentTimestamp = Template.bind({});
 IconLinkComponentTimestamp.args = {
   type: IconLinkType.slate,
   icon: IconType.time,
-  text: "Timestamp",
+  text: 'Timestamp',
 };
 
 export const IconLinkComponentLocation = Template.bind({});
 IconLinkComponentLocation.args = {
   type: IconLinkType.slate,
   icon: IconType.pin,
-  text: "Location",
+  text: 'Location',
 };
