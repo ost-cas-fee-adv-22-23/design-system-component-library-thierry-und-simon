@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 import { Icon, IconType } from "../Icon/Icon";
 
-enum ModalDevice {
+export enum ModalDevice {
   mobile = "mobile",
   desktop = "desktop",
 }
@@ -27,7 +27,7 @@ const classes = {
     return `${classesMap[device]} m-xl bg-white rounded-lg`;
   },
   title:
-    "flex items-center justify-between h-[60px] px-l bg-violet-600 rounded-t-lg",
+    "flex items-center justify-between h-[88px] px-l bg-violet-600 rounded-t-lg",
   titleContent: "text-white",
   bodyContent: "p-l",
 };
