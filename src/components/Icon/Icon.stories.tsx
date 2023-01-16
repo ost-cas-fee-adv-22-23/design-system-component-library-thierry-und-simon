@@ -1,38 +1,38 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import React from "react";
-import { Icon, IconType } from "./Icon";
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import React from 'react';
+import { Icon, IconType } from './Icon';
 
 export default {
-  title: "Example/Icon",
+  title: 'Components/Icon',
   component: Icon,
   argTypes: {
     type: {
       options: [
-        "SvgMumble",
-        "SvgProfile",
-        "SvgArrowDown",
-        "SvgArrowLeft",
-        "SvgArrowRight",
-        "SvgArrowUp",
-        "SvgBubble",
-        "SvgBubbleDark",
-        "SvgCalender",
-        "SvgCancel",
-        "SvgConfirm",
-        "SvgEdit",
-        "SvgExpand",
-        "SvgLike",
-        "SvgLikeDark",
-        "SvgLogout",
-        "SvgPin",
-        "SvgReturn",
-        "SvgSend",
-        "SvgShare",
-        "SvgTime",
-        "SvgUpload",
-        "SvgViews",
+        'SvgMumble',
+        'SvgProfile',
+        'SvgArrowDown',
+        'SvgArrowLeft',
+        'SvgArrowRight',
+        'SvgArrowUp',
+        'SvgBubble',
+        'SvgBubbleDark',
+        'SvgCalender',
+        'SvgCancel',
+        'SvgConfirm',
+        'SvgEdit',
+        'SvgExpand',
+        'SvgLike',
+        'SvgLikeDark',
+        'SvgLogout',
+        'SvgPin',
+        'SvgReturn',
+        'SvgSend',
+        'SvgShare',
+        'SvgTime',
+        'SvgUpload',
+        'SvgViews',
       ],
-      control: { type: "select" },
+      control: { type: 'select' },
     },
   },
 } as ComponentMeta<typeof Icon>;

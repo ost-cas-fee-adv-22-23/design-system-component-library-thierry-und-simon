@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { UserImage, UserImageSizeType } from './userImage';
 
 export default {
-  title: 'Example/UserImage',
+  title: 'Components/UserImage',
   component: UserImage,
   argTypes: {
     type: { control: 'radio', options: UserImageSizeType },

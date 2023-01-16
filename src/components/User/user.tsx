@@ -68,7 +68,7 @@ export const User: FC<UserProps> = ({ type, ...props }) => {
               <p className='text-xs text-violet-600 text-center mb-s'>
                 Username
               </p>
-              <div className='flex justify-items-stretch'>
+              <div className='flex w-full'>
                 <Button
                   label='Follow'
                   color={ButtonColor.violet}

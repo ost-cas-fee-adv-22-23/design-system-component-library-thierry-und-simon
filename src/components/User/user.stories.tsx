@@ -3,7 +3,7 @@ import { User, SizeType } from './user';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
-  title: 'Example/User',
+  title: 'Components/User',
   component: User,
   argTypes: {
     type: { control: 'radio', options: SizeType },
