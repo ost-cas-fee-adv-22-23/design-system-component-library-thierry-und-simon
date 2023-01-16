@@ -9,14 +9,27 @@ export enum HeaderType {
 
 export type HeaderProps = {
   type: HeaderType;
+  style: HeaderType;
   children: ReactNode;
 };
 
 const classes = {
-  header: "text-slate-600",
+  header: (style: HeaderType) => {
+    const classesMap = {
+      [HeaderType.h1]: "text-4xl bold text-current",
+      [HeaderType.h2]: "text-3xl bold text-current",
+      [HeaderType.h3]: "text-2xl semibold text-current",
+      [HeaderType.h4]: "text-xl semibold text-current",
+    };
+    return classesMap[style];
+  },
 };
 
-export const Header: FC<HeaderProps> = ({ type, children }) => {
-  const tag = createElement(type, { className: classes.header }, children);
+export const Header: FC<HeaderProps> = ({ type, style = type, children }) => {
+  const tag = createElement(
+    type,
+    { className: classes.header(style) },
+    children
+  );
   return tag;
 };
