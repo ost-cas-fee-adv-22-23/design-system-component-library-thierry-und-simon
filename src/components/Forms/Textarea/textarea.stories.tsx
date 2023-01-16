@@ -8,6 +8,7 @@ export default {
   argTypes: {
     rows: { control: "number" },
     placeholder: { control: "text" },
+    label: { control: "text" },
   },
 } as ComponentMeta<typeof Textarea>;
 

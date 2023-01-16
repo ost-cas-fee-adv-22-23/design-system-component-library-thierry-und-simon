@@ -1,8 +1,10 @@
 import React, { FC } from "react";
+import { Label, LabelType } from "../Label/label";
 
 export type TextareaProps = {
-  children: React.ReactNode;
-  placeholder: string;
+  label?: string;
+  id?: string;
+  placeholder?: string;
   rows: number;
 };
 
@@ -14,17 +16,26 @@ const classes = {
 };
 
 export const Textarea: FC<TextareaProps> = ({
-  children,
   placeholder,
   rows = 5,
+  label,
+  id,
 }) => {
   return (
-    <textarea
-      className={`${classes.textarea} ${classes.textareaHover} ${classes.textareaFocus}`}
-      rows={rows}
-      placeholder={placeholder}
-    >
-      {children}
-    </textarea>
+    <>
+      <div className="mb-6 last:mb-0">
+        {label && (
+          <Label type={LabelType.M} id={id}>
+            {label}
+          </Label>
+        )}
+        <textarea
+          className={`${classes.textarea} ${classes.textareaHover} ${classes.textareaFocus}`}
+          rows={rows}
+          placeholder={placeholder}
+          id={id}
+        ></textarea>
+      </div>
+    </>
   );
 };

@@ -1,21 +1,22 @@
 import React, { FC } from "react";
 import { Icon, IconType } from "../../Icon/Icon";
+import { Label, LabelType } from "../Label/label";
 
 export type InputProps = {
   type: "text" | "password" | "email";
   label: string;
   id: string;
-  placeholder: string;
+  placeholder?: string;
 };
 
 export const Input: FC<InputProps> = ({ label, type, id, placeholder }) => {
   const [showPassword, setShowPassword] = React.useState(false);
 
   return (
-    <div>
-      <label className="block text-slate-700 font-semibold " htmlFor={id}>
+    <div className="mb-6 last:mb-0">
+      <Label type={LabelType.M} id={id}>
         {label}
-      </label>
+      </Label>
       <div className="relative">
         {type === "password" && (
           <div
@@ -26,7 +27,7 @@ export const Input: FC<InputProps> = ({ label, type, id, placeholder }) => {
           </div>
         )}
         <input
-          className="w-full bg-slate-50 p-2 text-[20px] text-slate-700 font placeholder:text-slate-500 rounded border border-slate-200 hover:border-violet-600 hover:border-1 focus:border-2 focus:outline-none focus:border-violet-600"
+          className="w-full bg-slate-50 p-2 text-[20px] text-slate-700 font placeholder:text-slate-500 rounded outline outline-1 outline-slate-200 hover:outline-violet-600 hover:outline-1 focus:outline-2 focus:outline-violet-600"
           id={id}
           type={showPassword && type === "password" ? "text" : type}
           placeholder={placeholder}
