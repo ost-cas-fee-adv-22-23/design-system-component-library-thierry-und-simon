@@ -6,6 +6,11 @@ import { IconLink, IconLinkType } from '../IconLink/iconLink';
 import { Icon, IconType } from '../Icon/Icon';
 import { Textarea } from '../Forms/Textarea/textarea';
 import { Button, ButtonSize, ButtonColor } from '../Button/button';
+import { Header, HeaderType } from '../Header/Header';
+import {
+  InteractionButton,
+  InteractionButtonType,
+} from '../InteractionButtons/interactionButton';
 
 export default {
   title: 'Layout/Card',
@@ -56,27 +61,14 @@ exampleCard.args = {
 
       <div className='my-m rounded-lg bg-violet-200 w-100 w-100 pt-16/9'></div>
       <div className='flex'>
-        <IconLink
-          type={IconLinkType.slate}
-          icon={IconType.bubble}
-          text='Message'
-          textSize='text-sm'
-        />
-        <div className='ml-xl'>
-          <IconLink
-            type={IconLinkType.slate}
-            icon={IconType.like}
-            text='Like'
-            textSize='text-sm'
-          />
+        <div>
+          <InteractionButton type={InteractionButtonType.comment} count={0} />
         </div>
         <div className='ml-xl'>
-          <IconLink
-            type={IconLinkType.slate}
-            icon={IconType.share}
-            text='Copy Link'
-            textSize='text-xs'
-          />
+          <InteractionButton type={InteractionButtonType.like} count={0} />
+        </div>
+        <div className='ml-xl'>
+          <InteractionButton type={InteractionButtonType.share} count={0} />
         </div>
       </div>
     </>
@@ -99,27 +91,14 @@ exampleCardInline.args = {
 
       <div className='my-m rounded-lg bg-violet-200 w-100 w-100 pt-16/9'></div>
       <div className='flex'>
-        <IconLink
-          type={IconLinkType.slate}
-          icon={IconType.bubble}
-          text='Message'
-          textSize='text-sm'
-        />
-        <div className='ml-xl'>
-          <IconLink
-            type={IconLinkType.slate}
-            icon={IconType.like}
-            text='Like'
-            textSize='text-sm'
-          />
+        <div>
+          <InteractionButton type={InteractionButtonType.comment} count={0} />
         </div>
         <div className='ml-xl'>
-          <IconLink
-            type={IconLinkType.slate}
-            icon={IconType.share}
-            text='Copy Link'
-            textSize='text-xs'
-          />
+          <InteractionButton type={InteractionButtonType.like} count={0} />
+        </div>
+        <div className='ml-xl'>
+          <InteractionButton type={InteractionButtonType.share} count={0} />
         </div>
       </div>
     </>
@@ -130,14 +109,18 @@ writeCard.args = {
   showProfileImage: true,
   children: (
     <>
-      <h4 className='mb-s'>Hey, was läuft?</h4>
-      <Textarea placeholder='Deine Meinung zählt!'></Textarea>
+      <div className='mb-s'>
+        <Header type={HeaderType.h4} style={HeaderType.h4}>
+          Hey, was läuft?
+        </Header>
+      </div>
+
+      <Textarea placeholder='Deine Meinung zählt!' rows={5}></Textarea>
       <div className='flex mt-xs'>
         <div className='mr-s flex grow'>
           <Button
             size={ButtonSize.medium}
             color={ButtonColor.slate}
-            grow={true}
             label='Bild hochladen'
           >
             <span className='ml-xs'>
@@ -149,7 +132,6 @@ writeCard.args = {
         <Button
           size={ButtonSize.medium}
           color={ButtonColor.violet}
-          grow={true}
           label='Absenden'
         >
           <span className='ml-xs'>
@@ -168,7 +150,7 @@ writeCardInline.args = {
     <>
       <User type={SizeType.BASE} />
       <div className='mt-s'>
-        <Textarea placeholder='Deine Meinung zählt!'></Textarea>
+        <Textarea placeholder='Deine Meinung zählt!' rows={5}></Textarea>
       </div>
 
       <div className='flex mt-xs'>
