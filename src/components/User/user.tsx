@@ -34,7 +34,6 @@ export const User: FC<UserProps> = ({ type, ...props }) => {
                   type={IconLinkType.violet}
                   icon={IconType.profile}
                   text='Username'
-                  textSize='text-xs'
                 />
               </div>
 
@@ -43,7 +42,6 @@ export const User: FC<UserProps> = ({ type, ...props }) => {
                   type={IconLinkType.slate}
                   icon={IconType.time}
                   text='Timestamp'
-                  textSize='text-xs'
                 />
               </div>
               {type == SizeType.XL && (
@@ -52,7 +50,6 @@ export const User: FC<UserProps> = ({ type, ...props }) => {
                     type={IconLinkType.slate}
                     icon={IconType.calender}
                     text='Joined'
-                    textSize='text-xs'
                   />
                 </div>
               )}
