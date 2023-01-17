@@ -38,7 +38,7 @@ const classes = {
   },
 };
 
-export const IconLink: FC<IconLinkProps> = ({ type, icon, text, textSize }) => {
+export const IconLink: FC<IconLinkProps> = ({ type, icon, text }) => {
   const [hover, setHover] = useState<HoverType>('false');
 
   return (
