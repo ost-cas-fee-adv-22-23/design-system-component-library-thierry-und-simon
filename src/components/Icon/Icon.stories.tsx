@@ -1,6 +1,6 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import React from 'react';
-import { Icon, IconType } from './Icon';
+import { ComponentMeta, ComponentStory } from '@storybook/react'
+import React from 'react'
+import { Icon, IconType } from './Icon'
 
 export default {
   title: 'Components/Icon',
@@ -30,16 +30,16 @@ export default {
         'SvgShare',
         'SvgTime',
         'SvgUpload',
-        'SvgViews',
+        'SvgViews'
       ],
-      control: { type: 'select' },
-    },
-  },
-} as ComponentMeta<typeof Icon>;
+      control: { type: 'select' }
+    }
+  }
+} as ComponentMeta<typeof Icon>
 
-const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args} />;
+const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args} />
 
-export const IconComponent = Template.bind({});
+export const IconComponent = Template.bind({})
 IconComponent.args = {
-  type: IconType.mumble,
-};
+  type: IconType.mumble
+}

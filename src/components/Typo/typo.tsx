@@ -1,17 +1,17 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC, ReactNode } from 'react'
 
 export enum TypographyType {
-  h1 = "h1",
-  h2 = "h2",
-  h3 = "h3",
-  h4 = "h4",
-  p = "p",
+  h1 = 'h1',
+  h2 = 'h2',
+  h3 = 'h3',
+  h4 = 'h4',
+  p = 'p'
 }
 
 export type TypoProps = {
-  type: TypographyType;
-  children: ReactNode;
-};
+  type: TypographyType
+  children: ReactNode
+}
 
 export const Typography: FC<TypoProps> = ({ type, children }) => (
   <>
@@ -43,4 +43,4 @@ export const Typography: FC<TypoProps> = ({ type, children }) => (
     </p>
     <p className="text-xs text-slate-300">Placeholder</p>
   </>
-);
+)

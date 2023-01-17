@@ -1,35 +1,35 @@
-import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { UserImage, UserImageSizeType } from './userImage';
+import React from 'react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { UserImage, UserImageSizeType } from './userImage'
 
 export default {
   title: 'Components/UserImage',
   component: UserImage,
   argTypes: {
-    type: { control: 'radio', options: UserImageSizeType },
-  },
-} as ComponentMeta<typeof UserImage>;
+    type: { control: 'radio', options: UserImageSizeType }
+  }
+} as ComponentMeta<typeof UserImage>
 
 const Template: ComponentStory<typeof UserImage> = (args) => (
   <UserImage {...args} />
-);
+)
 
-export const UserImageS = Template.bind({});
+export const UserImageS = Template.bind({})
 UserImageS.args = {
-  type: UserImageSizeType.S,
-};
+  type: UserImageSizeType.S
+}
 
-export const UserImageM = Template.bind({});
+export const UserImageM = Template.bind({})
 UserImageM.args = {
-  type: UserImageSizeType.M,
-};
+  type: UserImageSizeType.M
+}
 
-export const UserImageLG = Template.bind({});
+export const UserImageLG = Template.bind({})
 UserImageLG.args = {
-  type: UserImageSizeType.LG,
-};
+  type: UserImageSizeType.LG
+}
 
-export const UserImageXL = Template.bind({});
+export const UserImageXL = Template.bind({})
 UserImageXL.args = {
-  type: UserImageSizeType.XL,
-};
+  type: UserImageSizeType.XL
+}

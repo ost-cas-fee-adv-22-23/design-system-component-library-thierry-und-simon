@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 const SvgExpand = (props) => (
   <svg
     width={16}
@@ -12,5 +12,5 @@ const SvgExpand = (props) => (
       fill="#475569"
     />
   </svg>
-);
-export default SvgExpand;
+)
+export default SvgExpand

@@ -1,23 +1,23 @@
-import React, { Children } from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { FormWrapper } from "./formWrapper";
-import { Input } from "../Input/input";
-import { Textarea } from "../Textarea/textarea";
-import { Modal, ModalDevice } from "../../Modal/modal";
-import { Label, LabelType } from "../Label/label";
-import { Button, ButtonSize, ButtonColor } from "../../Button/button";
-import { Icon, IconType } from "../../Icon/Icon";
+import React, { Children } from 'react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { FormWrapper } from './formWrapper'
+import { Input } from '../Input/input'
+import { Textarea } from '../Textarea/textarea'
+import { Modal, ModalDevice } from '../../Modal/modal'
+import { Label, LabelType } from '../Label/label'
+import { Button, ButtonSize, ButtonColor } from '../../Button/button'
+import { Icon, IconType } from '../../Icon/Icon'
 
 export default {
-  title: "Layout/Form",
-  component: FormWrapper,
-} as ComponentMeta<typeof FormWrapper>;
+  title: 'Layout/Form',
+  component: FormWrapper
+} as ComponentMeta<typeof FormWrapper>
 
 const Template: ComponentStory<typeof FormWrapper> = (args) => (
   <FormWrapper {...args} />
-);
+)
 
-export const SettingsForm = Template.bind({});
+export const SettingsForm = Template.bind({})
 SettingsForm.args = {
   children: (
     <>
@@ -58,5 +58,5 @@ SettingsForm.args = {
         </FormWrapper>
       </Modal>
     </>
-  ),
-};
+  )
+}

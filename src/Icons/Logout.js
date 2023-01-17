@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 const SvgLogout = (props) => (
   <svg
     width={16}
@@ -16,5 +16,5 @@ const SvgLogout = (props) => (
       fill="#475569"
     />
   </svg>
-);
-export default SvgLogout;
+)
+export default SvgLogout

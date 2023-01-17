@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 const SvgConfirm = (props) => (
   <svg
     width={16}
@@ -12,5 +12,5 @@ const SvgConfirm = (props) => (
       fill="#475569"
     />
   </svg>
-);
-export default SvgConfirm;
+)
+export default SvgConfirm

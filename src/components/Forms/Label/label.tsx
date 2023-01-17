@@ -1,26 +1,26 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC, ReactNode } from 'react'
 
 export enum LabelType {
-  M = "M",
-  XL = "XL",
+  M = 'M',
+  XL = 'XL'
 }
 
 export type LabelProps = {
-  type: LabelType;
-  children: ReactNode;
-  id?: string;
-};
+  type: LabelType
+  children: ReactNode
+  id?: string
+}
 
 const classes = {
-  labelBase: "block text-slate-700 font-semibold",
+  labelBase: 'block text-slate-700 font-semibold',
   labelSize: (type: LabelType) => {
     const sizeaMap = {
-      [LabelType.M]: "text-sm mb-1",
-      [LabelType.XL]: "text-lg leading-6 mb-4",
-    };
-    return sizeaMap[type];
-  },
-};
+      [LabelType.M]: 'text-sm mb-1',
+      [LabelType.XL]: 'text-lg leading-6 mb-4'
+    }
+    return sizeaMap[type]
+  }
+}
 
 export const Label: FC<LabelProps> = ({ type, children, id }) => {
   return (
@@ -30,5 +30,5 @@ export const Label: FC<LabelProps> = ({ type, children, id }) => {
     >
       {children}
     </label>
-  );
-};
+  )
+}

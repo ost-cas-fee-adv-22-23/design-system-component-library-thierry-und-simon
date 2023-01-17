@@ -1,6 +1,6 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import React from 'react';
-import { Button } from './button';
+import { ComponentMeta, ComponentStory } from '@storybook/react'
+import React from 'react'
+import { Button } from './button'
 
 export default {
   title: 'Components/Button',
@@ -9,59 +9,59 @@ export default {
     size: { control: 'radio', options: ['medium', 'large', 'nolabel'] },
     color: {
       control: 'radio',
-      options: ['violet', 'slate', 'gradiant'],
-    },
-  },
-} as ComponentMeta<typeof Button>;
+      options: ['violet', 'slate', 'gradiant']
+    }
+  }
+} as ComponentMeta<typeof Button>
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
 
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-export const LargeViolet = Template.bind({});
+export const LargeViolet = Template.bind({})
 LargeViolet.args = {
   size: 'large',
   label: 'Button Label',
-  color: 'violet',
-};
+  color: 'violet'
+}
 
-export const LargeSlate = Template.bind({});
+export const LargeSlate = Template.bind({})
 LargeSlate.args = {
   size: 'large',
   color: 'slate',
-  label: 'Button Label',
-};
+  label: 'Button Label'
+}
 
-export const LargeGradiant = Template.bind({});
+export const LargeGradiant = Template.bind({})
 LargeGradiant.args = {
   size: 'large',
   label: 'Button Label',
-  color: 'gradiant',
-};
+  color: 'gradiant'
+}
 
-export const MediumViolet = Template.bind({});
+export const MediumViolet = Template.bind({})
 MediumViolet.args = {
   size: 'medium',
   label: 'Button Label',
-  color: 'violet',
-};
+  color: 'violet'
+}
 
-export const MediumSlate = Template.bind({});
+export const MediumSlate = Template.bind({})
 MediumSlate.args = {
   size: 'medium',
   label: 'Button Label',
-  color: 'slate',
-};
+  color: 'slate'
+}
 
-export const MediumGradiant = Template.bind({});
+export const MediumGradiant = Template.bind({})
 MediumGradiant.args = {
   size: 'medium',
   label: 'Button Label',
-  color: 'gradiant',
-};
+  color: 'gradiant'
+}
 
-export const noLabel = Template.bind({});
+export const noLabel = Template.bind({})
 noLabel.args = {
   size: 'nolabel',
   label: 'Button Label',
-  color: 'slate',
-};
+  color: 'slate'
+}

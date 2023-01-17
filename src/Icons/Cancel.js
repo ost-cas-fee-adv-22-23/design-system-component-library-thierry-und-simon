@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 const SvgCancel = (props) => (
   <svg
     width={14}
@@ -12,5 +12,5 @@ const SvgCancel = (props) => (
       fill="#475569"
     />
   </svg>
-);
-export default SvgCancel;
+)
+export default SvgCancel

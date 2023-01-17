@@ -1,17 +1,17 @@
-import React, { Children } from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { FileUpload } from "./fileUpload";
+import React, { Children } from 'react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { FileUpload } from './fileUpload'
 
 export default {
-  title: "Forms/FileUpload",
+  title: 'Forms/FileUpload',
   component: FileUpload,
   argTypes: {
-    children: {},
-  },
-} as ComponentMeta<typeof FileUpload>;
+    children: {}
+  }
+} as ComponentMeta<typeof FileUpload>
 
 const Template: ComponentStory<typeof FileUpload> = (args) => (
   <FileUpload {...args} />
-);
+)
 
-export const FielUploadComponent = Template.bind({});
+export const FielUploadComponent = Template.bind({})
