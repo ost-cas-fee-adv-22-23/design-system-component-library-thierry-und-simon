@@ -33,8 +33,7 @@ export const User: FC<UserProps> = ({ type, ...props }) => {
                 <IconLink
                   type={IconLinkType.violet}
                   icon={IconType.profile}
-                  text="Username"
-                  textSize="text-xs"
+                  text='Username'
                 />
               </div>
 
@@ -42,8 +41,7 @@ export const User: FC<UserProps> = ({ type, ...props }) => {
                 <IconLink
                   type={IconLinkType.slate}
                   icon={IconType.time}
-                  text="Timestamp"
-                  textSize="text-xs"
+                  text='Timestamp'
                 />
               </div>
               {type == SizeType.XL && (
@@ -51,8 +49,7 @@ export const User: FC<UserProps> = ({ type, ...props }) => {
                   <IconLink
                     type={IconLinkType.slate}
                     icon={IconType.calender}
-                    text="Joined"
-                    textSize="text-xs"
+                    text='Joined'
                   />
                 </div>
               )}
