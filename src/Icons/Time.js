@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 const SvgTime = (props) => (
   <svg
     width={16}
@@ -16,5 +16,5 @@ const SvgTime = (props) => (
       fill="#475569"
     />
   </svg>
-);
-export default SvgTime;
+)
+export default SvgTime

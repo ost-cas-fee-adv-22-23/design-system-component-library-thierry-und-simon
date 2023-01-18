@@ -1,33 +1,33 @@
-import React, { Children } from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Input } from "./input";
+import React, { Children } from 'react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Input } from './input'
 
 export default {
-  title: "Forms/Input",
+  title: 'Forms/Input',
   component: Input,
   argTypes: {
-    label: { control: "text" },
+    label: { control: 'text' },
     type: {
-      control: "radio",
-      options: ["text", "email", "password"],
-    },
-  },
-} as ComponentMeta<typeof Input>;
+      control: 'radio',
+      options: ['text', 'email', 'password']
+    }
+  }
+} as ComponentMeta<typeof Input>
 
-const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
+const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />
 
-export const TextInput = Template.bind({});
+export const TextInput = Template.bind({})
 TextInput.args = {
-  type: "text",
-  label: "Text Input",
-};
-export const EmailInput = Template.bind({});
+  type: 'text',
+  label: 'Text Input'
+}
+export const EmailInput = Template.bind({})
 EmailInput.args = {
-  type: "email",
-  label: "Email Input",
-};
-export const PasswordInput = Template.bind({});
+  type: 'email',
+  label: 'Email Input'
+}
+export const PasswordInput = Template.bind({})
 PasswordInput.args = {
-  type: "password",
-  label: "Password Input",
-};
+  type: 'password',
+  label: 'Password Input'
+}

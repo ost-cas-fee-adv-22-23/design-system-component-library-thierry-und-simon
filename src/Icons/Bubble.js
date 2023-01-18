@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 const SvgBubble = (props) => (
   <svg
     width={16}
@@ -12,5 +12,5 @@ const SvgBubble = (props) => (
       fill="#475569"
     />
   </svg>
-);
-export default SvgBubble;
+)
+export default SvgBubble

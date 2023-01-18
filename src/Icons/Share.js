@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 const SvgShare = (props) => (
   <svg
     width={14}
@@ -12,5 +12,5 @@ const SvgShare = (props) => (
       fill="#475569"
     />
   </svg>
-);
-export default SvgShare;
+)
+export default SvgShare

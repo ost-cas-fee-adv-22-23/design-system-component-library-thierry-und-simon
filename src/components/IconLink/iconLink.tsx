@@ -19,6 +19,7 @@ const classes = {
   wrapperColor: (type: IconLinkType) => {
     const classesMap = {
       [IconLinkType.slate]: 'text-slate-400 hover:text-slate-600',
+
       [IconLinkType.violet]: 'text-violet-600 hover:text-violet-900',
     };
     return classesMap[type];
@@ -50,5 +51,5 @@ export const IconLink: FC<IconLinkProps> = ({ type, icon, text }) => {
       <Icon type={icon} color={classes.IconColor(type, hover)} />
       <p className='textr-xs'>{text}</p>
     </div>
-  );
-};
+  )
+}

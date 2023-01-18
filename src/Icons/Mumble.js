@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 const SvgMumble = (props) => (
   <svg
     width={16}
@@ -18,5 +18,5 @@ const SvgMumble = (props) => (
       </clipPath>
     </defs>
   </svg>
-);
-export default SvgMumble;
+)
+export default SvgMumble

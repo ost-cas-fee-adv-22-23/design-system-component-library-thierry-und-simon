@@ -1,7 +1,7 @@
-import React, { FC } from "react";
-import { Icon, IconType } from "../../Icon/Icon";
+import React, { FC } from 'react'
+import { Icon, IconType } from '../../Icon/Icon'
 
-export type FileUploadProps = {};
+export type FileUploadProps = {}
 
 export const FileUpload: FC<FileUploadProps> = () => {
   return (
@@ -27,5 +27,5 @@ export const FileUpload: FC<FileUploadProps> = () => {
       </label>
       <input id="file-upload" className="hidden" type="file" />
     </div>
-  );
-};
+  )
+}

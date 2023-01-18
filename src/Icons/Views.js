@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 const SvgViews = (props) => (
   <svg
     width={16}
@@ -13,5 +13,5 @@ const SvgViews = (props) => (
     />
     <path d="M8 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" fill="#475569" />
   </svg>
-);
-export default SvgViews;
+)
+export default SvgViews

@@ -1,17 +1,17 @@
-import React, { FC, ReactNode, useState } from "react";
-let { Tab } = require("@headlessui/react");
+import React, { FC, ReactNode, useState } from 'react'
+const { Tab } = require('@headlessui/react')
 
 export const Toggle: FC = ({ ...props }) => {
-  const [enabled, setEnabled] = useState(false);
+  const [enabled, setEnabled] = useState(false)
 
   const styledTabs =
-    "rounded-md ui-selected:bg-white hover:text-slate-600 ui-selected:text-violet-600  py-xs px-s transition-colors	";
+    'rounded-md ui-selected:bg-white hover:text-slate-600 ui-selected:text-violet-600  py-xs px-s transition-colors	'
 
   return (
     <div className="flex">
       <Tab.Group
         onChange={(index: number) => {
-          console.log("Changed selected tab to:", index);
+          console.log('Changed selected tab to:', index)
         }}
       >
         <Tab.List className="rounded-lg bg-slate-200 p-xxs ">
@@ -29,5 +29,5 @@ export const Toggle: FC = ({ ...props }) => {
         </Tab.Panels> */}
       </Tab.Group>
     </div>
-  );
-};
+  )
+}

@@ -1,24 +1,24 @@
-import React, { FC, ReactNode } from 'react';
-import { Icon, IconType } from '../Icon/Icon';
+import React, { FC, ReactNode } from 'react'
+import { Icon, IconType } from '../Icon/Icon'
 
 export enum ButtonSize {
   medium = 'medium',
   large = 'large',
-  nolabel = 'nolabel',
+  nolabel = 'nolabel'
 }
 
 export enum ButtonColor {
   violet = 'violet',
   slate = 'slate',
-  gradiant = 'gradiant',
+  gradiant = 'gradiant'
 }
 
 export type ButtonProps = {
-  size: ButtonSize;
-  color: ButtonColor;
-  label: string;
-  children?: ReactNode;
-};
+  size: ButtonSize
+  color: ButtonColor
+  label: string
+  children?: ReactNode
+}
 
 export const Button: FC<ButtonProps> = ({
   color,
@@ -27,10 +27,11 @@ export const Button: FC<ButtonProps> = ({
   children,
   ...props
 }) => {
-  let colorClasses = '';
+  let colorClasses = ''
   switch (color) {
     case ButtonColor.violet:
       colorClasses =
+
         'bg-violet-600  hover:bg-violet-700 hover:outline-violet-100 active:outline-violet-200';
       break;
     case ButtonColor.slate:
@@ -39,11 +40,11 @@ export const Button: FC<ButtonProps> = ({
       break;
     case ButtonColor.gradiant:
       colorClasses =
-        'bg-gradient-to-r from-pink-400 to-violet-700 hover:via-violet-700 hover:to-violet-700 hover:outline-violet-100 active:outline-violet-200';
-      break;
+        'bg-gradient-to-r from-pink-400 to-violet-700 hover:via-violet-700 hover:to-violet-700 hover:outline-violet-100 active:outline-violet-200'
+      break
   }
 
-  let spacingClasses = '';
+  let spacingClasses = ''
   switch (size) {
     case ButtonSize.large:
       spacingClasses = 'py-s px-m rounded-lg';
@@ -58,18 +59,18 @@ export const Button: FC<ButtonProps> = ({
 
   return (
     <button
-      type='button'
+      type="button"
       className={`${colorClasses} ${spacingClasses} grow text-sm text-center text-white outline outline-transparent outline-4 transition flex items-center box-border`}
       {...props}
     >
       {size == 'nolabel' ? (
-        <Icon type={IconType.mumble} color='white' />
+        <Icon type={IconType.mumble} color="white" />
       ) : (
-        <span className='mx-auto flex'>
+        <span className="mx-auto flex">
           {label}
           {children}
         </span>
       )}
     </button>
-  );
-};
+  )
+}

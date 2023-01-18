@@ -1,16 +1,16 @@
-import React, { FC, ReactNode } from 'react';
-import { UserImage, UserImageSizeType } from '../UserImage/userImage';
+import React, { FC, ReactNode } from 'react'
+import { UserImage, UserImageSizeType } from '../UserImage/userImage'
 
 export enum CardType {
   mumble = 'SvgMumble',
-  profile = 'SvgProfile',
+  profile = 'SvgProfile'
 }
 
 export type CardProps = {
-  showProfileImage: boolean;
-  roundedBorders: boolean;
-  children: ReactNode;
-};
+  showProfileImage: boolean
+  roundedBorders: boolean
+  children: ReactNode
+}
 
 export const Card: FC<CardProps> = ({
   showProfileImage,
@@ -25,12 +25,12 @@ export const Card: FC<CardProps> = ({
       }`}
     >
       {showProfileImage && (
-        <div className='absolute -left-l'>
+        <div className="absolute -left-l">
           <UserImage type={UserImageSizeType.M} />
         </div>
       )}
 
       {children}
     </div>
-  );
-};
+  )
+}

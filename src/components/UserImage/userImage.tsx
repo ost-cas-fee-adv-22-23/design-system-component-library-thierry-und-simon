@@ -1,42 +1,42 @@
-import React, { FC, ReactNode } from 'react';
-import { Icon, IconType } from '../Icon/Icon';
+import React, { FC, ReactNode } from 'react'
+import { Icon, IconType } from '../Icon/Icon'
 
 export enum UserImageSizeType {
   S = 's',
   M = 'm',
   LG = 'lg',
-  XL = 'xl',
+  XL = 'xl'
 }
 
 export type UserImageProps = {
-  type: UserImageSizeType;
-};
+  type: UserImageSizeType
+}
 
 export const UserImage: FC<UserImageProps> = ({ type }) => {
-  let size = '';
+  let size = ''
 
   switch (type) {
     case UserImageSizeType.S:
-      size = 'w-10 h-10';
-      break;
+      size = 'w-10 h-10'
+      break
     case UserImageSizeType.M:
-      size = 'w-16 h-16 border-md border-slate-100';
-      break;
+      size = 'w-16 h-16 border-md border-slate-100'
+      break
     case UserImageSizeType.LG:
-      size = 'w-24 h-24 border-md border-slate-100';
-      break;
+      size = 'w-24 h-24 border-md border-slate-100'
+      break
     case UserImageSizeType.XL:
-      size = 'w-40 h-40 border-md border-slate-100';
-      break;
+      size = 'w-40 h-40 border-md border-slate-100'
+      break
   }
 
   return (
     <div className={`rounded-full group bg-violet-200 relative ${size}`}>
       {type == UserImageSizeType.XL && (
-        <div className='absolute bottom-0 right-0 rounded-full bg-slate-600 p-s opacity-0 cursor-pointer group-hover:opacity-100'>
-          <Icon type={IconType.edit} color='white' />
+        <div className="absolute bottom-0 right-0 rounded-full bg-slate-600 p-s opacity-0 cursor-pointer group-hover:opacity-100">
+          <Icon type={IconType.edit} color="white" />
         </div>
       )}
     </div>
-  );
-};
+  )
+}

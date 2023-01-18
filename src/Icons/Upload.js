@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 const SvgUpload = (props) => (
   <svg
     width={14}
@@ -16,5 +16,5 @@ const SvgUpload = (props) => (
       fill="#475569"
     />
   </svg>
-);
-export default SvgUpload;
+)
+export default SvgUpload

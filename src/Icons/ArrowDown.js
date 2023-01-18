@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 const SvgArrowDown = (props) => (
   <svg
     width={10}
@@ -12,5 +12,5 @@ const SvgArrowDown = (props) => (
       fill="#475569"
     />
   </svg>
-);
-export default SvgArrowDown;
+)
+export default SvgArrowDown

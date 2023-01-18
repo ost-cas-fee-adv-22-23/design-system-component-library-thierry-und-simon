@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 const SvgPin = (props) => (
   <svg
     width={14}
@@ -12,5 +12,5 @@ const SvgPin = (props) => (
       fill="#475569"
     />
   </svg>
-);
-export default SvgPin;
+)
+export default SvgPin

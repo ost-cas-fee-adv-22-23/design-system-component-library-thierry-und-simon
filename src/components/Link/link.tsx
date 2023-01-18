@@ -1,9 +1,9 @@
-import React, { FC } from "react";
+import React, { FC } from 'react'
 
 export type LinkProps = {
-  link: string;
-  children: React.ReactNode;
-};
+  link: string
+  children: React.ReactNode
+}
 
 export const Link: FC<LinkProps> = ({ children, link }) => {
   return (
@@ -13,5 +13,5 @@ export const Link: FC<LinkProps> = ({ children, link }) => {
     >
       {children}
     </a>
-  );
-};
+  )
+}
