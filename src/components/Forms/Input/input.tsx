@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Icon, IconType } from '../../Icon/Icon'
+import { Icon, IconType } from '../../Icon/icon'
 import { Label, LabelType } from '../Label/label'
 
 export type InputProps = {

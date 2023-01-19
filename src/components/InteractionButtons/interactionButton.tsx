@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react'
-import { IconType, Icon } from '../Icon/Icon'
+import { IconType, Icon } from '../Icon/icon'
 
 export enum InteractionButtonType {
   like = 'like',

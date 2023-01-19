@@ -1,16 +1,15 @@
-import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Card } from './Card';
-import { SizeType, User } from '../User/user';
-import { IconLink, IconLinkType } from '../IconLink/iconLink';
-import { Icon, IconType } from '../Icon/Icon';
-import { Textarea } from '../Forms/Textarea/textarea';
-import { Button, ButtonSize, ButtonColor } from '../Button/button';
-import { Header, HeaderType } from '../Header/Header';
+import React from 'react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Card } from './card'
+import { SizeType, User } from '../User/user'
+import { Icon, IconType } from '../Icon/icon'
+import { Textarea } from '../Forms/Textarea/textarea'
+import { Button, ButtonSize, ButtonColor } from '../Button/button'
+import { Header, HeaderType } from '../Header/header'
 import {
   InteractionButton,
-  InteractionButtonType,
-} from '../InteractionButtons/interactionButton';
+  InteractionButtonType
+} from '../InteractionButtons/interactionButton'
 
 export default {
   title: 'Layout/Card',
@@ -58,15 +57,15 @@ exampleCard.args = {
         Deserunt pariatur molestiae incidunt. Omnis deserunt ratione et
         recusandae quos excepturi ut deleniti ut repellat magni.
       </p>
-      <div className='my-m rounded-lg bg-violet-200 w-100 w-100 pt-16/9'></div>
-      <div className='flex'>
+      <div className="my-m rounded-lg bg-violet-200 w-100 w-100 pt-16/9"></div>
+      <div className="flex">
         <div>
           <InteractionButton type={InteractionButtonType.comment} count={0} />
         </div>
-        <div className='ml-xl'>
+        <div className="ml-xl">
           <InteractionButton type={InteractionButtonType.like} count={0} />
         </div>
-        <div className='ml-xl'>
+        <div className="ml-xl">
           <InteractionButton type={InteractionButtonType.share} count={0} />
         </div>
       </div>
@@ -88,16 +87,15 @@ exampleCardInline.args = {
         recusandae quos excepturi ut deleniti ut repellat magni.
       </p>
 
-
-      <div className='my-m rounded-lg bg-violet-200 w-100 w-100 pt-16/9'></div>
-      <div className='flex'>
+      <div className="my-m rounded-lg bg-violet-200 w-100 w-100 pt-16/9"></div>
+      <div className="flex">
         <div>
           <InteractionButton type={InteractionButtonType.comment} count={0} />
         </div>
-        <div className='ml-xl'>
+        <div className="ml-xl">
           <InteractionButton type={InteractionButtonType.like} count={0} />
         </div>
-        <div className='ml-xl'>
+        <div className="ml-xl">
           <InteractionButton type={InteractionButtonType.share} count={0} />
         </div>
       </div>
@@ -109,18 +107,18 @@ writeCard.args = {
   showProfileImage: true,
   children: (
     <>
-      <div className='mb-s'>
+      <div className="mb-s">
         <Header type={HeaderType.h4} style={HeaderType.h4}>
           Hey, was läuft?
         </Header>
       </div>
-      <Textarea placeholder='Deine Meinung zählt!' rows={5}></Textarea>
-      <div className='flex mt-xs'>
-        <div className='mr-s flex grow'>
+      <Textarea placeholder="Deine Meinung zählt!" rows={5}></Textarea>
+      <div className="flex mt-xs">
+        <div className="mr-s flex grow">
           <Button
             size={ButtonSize.medium}
             color={ButtonColor.slate}
-            label='Bild hochladen'
+            label="Bild hochladen"
           >
             <span className="ml-xs">
               <Icon type={IconType.upload} color="white" />
@@ -131,7 +129,7 @@ writeCard.args = {
         <Button
           size={ButtonSize.medium}
           color={ButtonColor.violet}
-          label='Absenden'
+          label="Absenden"
         >
           <span className="ml-xs">
             <Icon type={IconType.send} color="white" />
@@ -148,8 +146,8 @@ writeCardInline.args = {
   children: (
     <>
       <User type={SizeType.BASE} />
-      <div className='mt-s'>
-        <Textarea placeholder='Deine Meinung zählt!' rows={5}></Textarea>
+      <div className="mt-s">
+        <Textarea placeholder="Deine Meinung zählt!" rows={5}></Textarea>
       </div>
 
       <div className="flex mt-xs">

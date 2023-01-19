@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
-import { ProfileHeader } from './ProfileHeader'
+import { ProfileHeader } from './profileHeader'
 
 export default {
   title: 'Layout/ProfileHeader',

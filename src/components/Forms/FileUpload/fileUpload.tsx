@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Icon, IconType } from '../../Icon/Icon'
+import { Icon, IconType } from '../../Icon/icon'
 
 export type FileUploadProps = {}
 
