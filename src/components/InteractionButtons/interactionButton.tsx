@@ -51,7 +51,7 @@ const CommentContent: FC<ContentProps> = ({ count, color }) => {
   )
 }
 
-const CopyContent: FC<ContentProps> = ({ count, color }) => {
+const CopyContent: FC<ContentProps> = ({ color }) => {
   return (
     <>
       <Icon type={IconType.share} color={color} />
