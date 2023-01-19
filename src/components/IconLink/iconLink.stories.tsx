@@ -1,7 +1,7 @@
 import React from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { IconLink, IconLinkType } from './iconLink'
-import { IconType } from '../Icon/Icon'
+import { IconType } from '../Icon/icon'
 
 export default {
   title: 'Components/IconLink',

@@ -1,4 +1,4 @@
-import React, { Children } from 'react'
+import React from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { FormWrapper } from './formWrapper'
 import { Input } from '../Input/input'
@@ -6,7 +6,7 @@ import { Textarea } from '../Textarea/textarea'
 import { Modal, ModalDevice } from '../../Modal/modal'
 import { Label, LabelType } from '../Label/label'
 import { Button, ButtonSize, ButtonColor } from '../../Button/button'
-import { Icon, IconType } from '../../Icon/Icon'
+import { Icon, IconType } from '../../Icon/icon'
 
 export default {
   title: 'Layout/Form',

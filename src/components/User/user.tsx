@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react'
+import React, { FC } from 'react'
 import { Button, ButtonColor, ButtonSize } from '../Button/button'
 import { UserImage, UserImageSizeType } from '../UserImage/userImage'
 import { IconLink, IconLinkType } from '../IconLink/iconLink'
