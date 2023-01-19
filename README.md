@@ -1,4 +1,4 @@
-# Template for CAS FEE ADV Design System
+# Mumble Design System
 
 This is a template repository for the CAS FEE ADV design system part.
 It is configured to automatically provide GitHub Actions to build and deploy
@@ -26,7 +26,7 @@ Please ensure the following prerequisites are met:
   - Your `package.json` file contains the correct _scope_ for your package (`@smartive-education`)
   - The `package.json` file contains the correct registry
 
-# Doku
+## Doku
 
 Scripts zum Build:
 ´npm run build´ legt einen neuen dist folder an, welcher dann deployed werden kann. Im Moment ist dieser mittels gitignore nicht im Repo. Damit die Components in einem neuen Repo genutzt werden können, muss man wie folgt vorgehen:
@@ -38,7 +38,7 @@ Scripts zum Build:
 
 [Todo:] Check ob dist Folder ins Repo soll / Check ob Tailwind Teil des Bundles sein muss?
 
-## Icons
+### Icons
 
 Die Icons können als SVG Files im Folder assets abgelegt werden. Mit dem command `npm run svgr` werden daraus React Components erstellt, welche in `src/Icons`abgelegt sind. Wenn neue Icons hinzugeüfgt werden, müssen die danach in der Icon Komponenten importiert und hinzugeüfgt werden.
 
