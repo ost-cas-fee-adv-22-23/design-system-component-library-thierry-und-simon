@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react'
+import React, { FC } from 'react'
 import SvgMumble from '../../Icons/Mumble'
 import SvgProfile from '../../Icons/Profile'
 import SvgArrowDown from '../../Icons/ArrowDown'

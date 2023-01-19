@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react'
-import { Icon, IconType } from '../Icon/Icon'
+import { Icon, IconType } from '../Icon/icon'
 
 export enum ModalDevice {
   mobile = 'mobile',

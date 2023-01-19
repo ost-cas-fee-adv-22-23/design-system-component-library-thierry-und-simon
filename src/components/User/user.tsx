@@ -2,7 +2,7 @@ import React, { FC, ReactNode } from 'react'
 import { Button, ButtonColor, ButtonSize } from '../Button/button'
 import { UserImage, UserImageSizeType } from '../UserImage/userImage'
 import { IconLink, IconLinkType } from '../IconLink/iconLink'
-import { Icon, IconType } from '../Icon/Icon'
+import { Icon, IconType } from '../Icon/icon'
 
 export enum SizeType {
   SM = 'sm',
@@ -33,7 +33,7 @@ export const User: FC<UserProps> = ({ type, ...props }) => {
                 <IconLink
                   type={IconLinkType.violet}
                   icon={IconType.profile}
-                  text='Username'
+                  text="Username"
                 />
               </div>
 
@@ -41,7 +41,7 @@ export const User: FC<UserProps> = ({ type, ...props }) => {
                 <IconLink
                   type={IconLinkType.slate}
                   icon={IconType.time}
-                  text='Timestamp'
+                  text="Timestamp"
                 />
               </div>
               {type == SizeType.XL && (
@@ -49,7 +49,7 @@ export const User: FC<UserProps> = ({ type, ...props }) => {
                   <IconLink
                     type={IconLinkType.slate}
                     icon={IconType.calender}
-                    text='Joined'
+                    text="Joined"
                   />
                 </div>
               )}

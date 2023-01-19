@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from 'react'
-import { Icon, IconType } from '../Icon/Icon'
+import { Icon, IconType } from '../Icon/icon'
 
 export enum UserImageSizeType {
   S = 's',
