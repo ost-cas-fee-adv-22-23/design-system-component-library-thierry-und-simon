@@ -59,12 +59,25 @@ Please ensure the following prerequisites are met:
   - When trying with `npm pack`, all your required files are included in the resulting tarball
   - Your `package.json` file contains the correct _scope_ for your package (`@smartive-education`)
   - The `package.json` file contains the correct registry
+  <pre>
+
+</pre>
 
 ## Installation and Usage
 
 ### Package Installation
 
-To install the design system package run
+This installation guideline assumes that you have a running react installation with Tailwind and Typescript installed.
+
+To install the package you need a personal GitHub Access Token. Create a `.npmrc` file in the same directory as your `package.json` and add the key and the declaration of the owner of the repo to your project:
+
+```
+@smartive-education:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken="--PERSONAL KEY--"
+
+```
+
+To install the design system package run the follwoing command within the root directory of your project.
 
 ```
 npm install @smartive-education/thierry-simon-mumble@1.6.0
