@@ -1,8 +1,10 @@
 import * as React from 'react'
-const SvgArrowRight = (props) => (
+import { SVGProps } from 'react'
+const SvgArrowRight = (props: SVGProps<SVGSVGElement>) => (
   <svg
-    width={16}
-    height={10}
+    width="1em"
+    height="1em"
+    viewBox="0 0 16 10"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}

@@ -50,55 +50,39 @@ export enum IconType {
 }
 
 export type IconProps = {
+  color: string
+  size?: number
   type: IconType
-  color?: string
 }
 
-export const Icon: FC<IconProps> = ({ type, color = '#475569' }) =>
-  type === IconType.mumble ? (
-    <SvgMumble color={color} />
-  ) : type === IconType.profile ? (
-    <SvgProfile color={color} />
-  ) : type === IconType.arrow_down ? (
-    <SvgArrowDown color={color} />
-  ) : type === IconType.arrow_left ? (
-    <SvgArrowLeft color={color} />
-  ) : type === IconType.arrow_right ? (
-    <SvgArrowRight color={color} />
-  ) : type === IconType.arrow_up ? (
-    <SvgArrowUp color={color} />
-  ) : type === IconType.bubble ? (
-    <SvgBubble color={color} />
-  ) : type === IconType.bubble_dark ? (
-    <SvgBubbleDark color={color} />
-  ) : type === IconType.calender ? (
-    <SvgCalender color={color} />
-  ) : type === IconType.cancel ? (
-    <SvgCancel color={color} />
-  ) : type === IconType.confirm ? (
-    <SvgConfirm color={color} />
-  ) : type === IconType.edit ? (
-    <SvgEdit color={color} />
-  ) : type === IconType.expand ? (
-    <SvgExpand color={color} />
-  ) : type === IconType.like ? (
-    <SvgLike color={color} />
-  ) : type === IconType.like_dark ? (
-    <SvgLikeDark color={color} />
-  ) : type === IconType.logout ? (
-    <SvgLogout color={color} />
-  ) : type === IconType.pin ? (
-    <SvgPin color={color} />
-  ) : type === IconType.return ? (
-    <SvgReturn color={color} />
-  ) : type === IconType.send ? (
-    <SvgSend color={color} />
-  ) : type === IconType.share ? (
-    <SvgShare color={color} />
-  ) : type === IconType.time ? (
-    <SvgTime color={color} />
-  ) : type === IconType.upload ? (
-    <SvgUpload color={color} />
-  ) : type === IconType.views ? (
-    <SvgViews color={color} />
-  ) : null
+export const Icon: FC<IconProps> = ({ type, color = '#475569', size = 16 }) => {
+  const icons = {
+    SvgMumble,
+    SvgProfile,
+    SvgArrowDown,
+    SvgArrowUp,
+    SvgArrowLeft,
+    SvgArrowRight,
+    SvgBubble,
+    SvgBubbleDark,
+    SvgCalender,
+    SvgCancel,
+    SvgConfirm,
+    SvgEdit,
+    SvgExpand,
+    SvgLike,
+    SvgLikeDark,
+    SvgLogout,
+    SvgPin,
+    SvgReturn,
+    SvgSend,
+    SvgShare,
+    SvgTime,
+    SvgUpload,
+    SvgViews
+  }
+
+  const SvgIcon = icons[type]
+
+  return <SvgIcon width={size} height={size} color={color} />
+}

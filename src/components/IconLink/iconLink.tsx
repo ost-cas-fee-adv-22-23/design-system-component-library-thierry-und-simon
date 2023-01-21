@@ -49,7 +49,7 @@ export const IconLink: FC<IconLinkProps> = ({ type, icon, text }) => {
       onMouseLeave={() => setHover('false')}
     >
       <Icon type={icon} color={classes.IconColor(type, hover)} />
-      <p className="textr-xs">{text}</p>
+      <p className="text-xs">{text}</p>
     </div>
   )
 }

@@ -15,7 +15,7 @@
     "build": "npm run build:types && npm run build:js",
     "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 6006",
-    "svgr": "svgr -d src/Icons/ assets/",
+    "svgr": "svgr -d src/Icons/ assets/ --typescript --icon",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prettier": "prettier --write .",
