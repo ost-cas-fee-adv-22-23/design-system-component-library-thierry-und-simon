@@ -17,7 +17,6 @@
     }
   },
   "scripts": {
-    "install": "npm run build",
     "build:js": "tsc",
     "build:types": "tsc --emitDeclarationOnly --declaration --declarationDir dist/types",
     "build": "rm -rf ./dist && tsc",
