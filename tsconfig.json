@@ -17,5 +17,5 @@
     "module": "esnext",
     "target": "esnext"
   },
-  "include": ["src/**/*"]
+  "include": ["src/index.ts", "Icons/**/*", "global.d.ts"]
 }
