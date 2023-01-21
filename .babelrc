@@ -1,9 +1,4 @@
 {
-  "presets": [
-    "@babel/preset-env",
-    "@babel/preset-typescript",
-    "@babel/preset-react"
-  ],
   "plugins": [
     [
       "@svgr/babel-plugin-replace-jsx-attribute-value",
