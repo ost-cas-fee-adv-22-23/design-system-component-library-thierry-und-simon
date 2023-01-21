@@ -21,7 +21,7 @@
     "install": "npm run build",
     "build:js": "tsc",
     "build:types": "tsc --emitDeclarationOnly --declaration --declarationDir dist/types",
-    "build": "rm -rf ./dist && npm run build:js && cp ./tailwind.config.js ./dist",
+    "build": "rm -rf ./dist && npm run build:js",
     "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 6006",
     "svgr": "svgr -d src/Icons/ assets/ --typescript --icon",
