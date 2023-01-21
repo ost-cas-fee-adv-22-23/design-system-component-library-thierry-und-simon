@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react'
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { Tab } = require('@headlessui/react')
 
-export const Toggle: FC = ({ ...props }) => {
+export const Toggle: FC = () => {
   const [enabled, setEnabled] = useState(false)
 
   const styledTabs =
