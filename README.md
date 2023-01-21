@@ -69,7 +69,7 @@ To install the package you need a personal GitHub Access Token. Create a `.npmrc
 To install the design system package run the follwoing command within the root directory of your project.
 
 ```
-npm install @smartive-education/thierry-simon-mumble@1.6.0
+npm install @smartive-education/thierry-simon-mumble@1.8.0
 ```
 
 ## Doku
