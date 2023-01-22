@@ -24,7 +24,7 @@
     "build": "rm -rf ./dist && tsc",
     "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 6006",
-    "svgr": "svgr -d src/Icons/ assets/ --typescript --icon",
+    "svgr": "npx @svgr/cli -d src/Icons/ assets/ --typescript --icon --replace-attr-values '#475569={props.color}'",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prettier": "prettier --write .",
