@@ -49,15 +49,14 @@ References:
 - When trying with `npm pack`, all your required files are included in the resulting tarball
 - Your `package.json` file contains the correct _scope_ for your package (`@smartive-education`)
 - The `package.json` file contains the correct registry
-<pre>
 
-</pre>
+</br>
 
 ## Installation and Usage
 
 ### Package Installation
 
-This installation guideline assumes that you have a running react installation with Tailwind and Typescript installed.
+This installation guideline assumes, that you have a running React installation with Tailwind and Typescript installed.
 
 To install the package you need a personal GitHub Access Token. Create a `.npmrc` file in the same directory as your `package.json` and add the key and the declaration of the owner of the repo to your project:
 
@@ -66,11 +65,53 @@ To install the package you need a personal GitHub Access Token. Create a `.npmrc
 //npm.pkg.github.com/:_authToken="--PERSONAL KEY--"
 ```
 
+</br>
+
+> Here you can find additional information about setting up a [personal access token](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry) and [configuring](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry) the `.npmrc` File.
+
+</br>
+
 To install the design system package run the follwoing command within the root directory of your project.
 
 ```
 npm install @smartive-education/thierry-simon-mumble@1.8.0
 ```
+
+This command installs the pacakage in your node modules and components can be imported with the following syntax:
+
+```
+import {
+  Button,
+  ButtonColor,
+  ButtonSize,
+} from '@smartive-education/thierry-simon-mumble';
+```
+
+However, Tailwind Styles and the custom Tailwind-Config are not applied. To get the matching styles, the Tailwind-Config in the consuming project hast the be modified as follows:
+
+```
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@smartive-education/thierry-simon-mumble/dist/**/*.{js,ts,jsx,tsx}',
+  ],
+  presets: [
+    require('./node_modules/@smartive-education/thierry-simon-mumble/mumble-presets'),
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+
+```
+
+1. The content Array needs to include the components from `node_modules` with `./node*modules/@smartive-education/thierry-simon-mumble/dist/\**/\_.{js,ts,jsx,tsx}``
+2. The presets from the custom config have to be added with ` presets: [ require('./node_modules/@smartive-education/thierry-simon-mumble/mumble-presets'), ],`
+
+With this configuration in place, the components can be used and the corresponding styles are applied.
 
 ## Doku
 
