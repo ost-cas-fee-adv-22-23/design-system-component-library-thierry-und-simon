@@ -21,7 +21,7 @@ export const Card: FC<CardProps> = ({
   return (
     <div
       className={`d-flex flex-column px-xl py-l bg-white relative ${
-        roundedBorders && 'rounded-t-xl'
+        roundedBorders && 'rounded-xl'
       }`}
     >
       {showProfileImage && (

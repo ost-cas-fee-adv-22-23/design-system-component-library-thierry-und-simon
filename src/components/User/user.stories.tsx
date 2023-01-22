@@ -6,7 +6,13 @@ export default {
   title: 'Components/User',
   component: User,
   argTypes: {
-    type: { control: 'radio', options: SizeType }
+    type: { control: 'radio', options: SizeType },
+    fullName: { control: 'text' },
+    userName: { control: 'text' },
+    hometown: { control: 'text' },
+    datePosted: { control: 'date' },
+    dateJoined: { control: 'date' },
+    userImageSrc: { control: 'text' }
   },
   parameters: {
     backgrounds: {
