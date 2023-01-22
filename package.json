@@ -15,7 +15,8 @@
   "exports": {
     ".": {
       "import": "./dist/index.js"
-    }
+    },
+    "./tailwind": "./tailwind.config.js"
   },
   "scripts": {
     "build:js": "tsc",
