@@ -15,7 +15,7 @@ export type UserImageProps = {
 
 export const UserImage: FC<UserImageProps> = ({
   type,
-  imgSrc = 'https://ui-avatars.com/api/?background=random&size=512'
+  imgSrc = 'https://xsgames.co/randomusers/avatar.php?g=male'
 }) => {
   let size = ''
 
