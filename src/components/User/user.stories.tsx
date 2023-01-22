@@ -6,7 +6,10 @@ export default {
   title: 'Components/User',
   component: User,
   argTypes: {
-    type: { control: 'radio', options: SizeType }
+    type: { control: 'radio', options: SizeType },
+    fullName: { control: 'text' },
+    username: { control: 'text' },
+    timestamp: { control: 'date' }
   },
   parameters: {
     backgrounds: {

@@ -10,9 +10,13 @@ export enum UserImageSizeType {
 
 export type UserImageProps = {
   type: UserImageSizeType
+  imgSrc?: string
 }
 
-export const UserImage: FC<UserImageProps> = ({ type }) => {
+export const UserImage: FC<UserImageProps> = ({
+  type,
+  imgSrc = 'https://ui-avatars.com/api/?background=random&size=512'
+}) => {
   let size = ''
 
   switch (type) {
@@ -31,7 +35,10 @@ export const UserImage: FC<UserImageProps> = ({ type }) => {
   }
 
   return (
-    <div className={`rounded-full group bg-violet-200 relative ${size}`}>
+    <div
+      className={`rounded-full group bg-violet-200 relative overflow-hidden ${size}`}
+    >
+      <img className="" src={imgSrc} />
       {type == UserImageSizeType.XL && (
         <div className="absolute bottom-0 right-0 rounded-full bg-slate-600 p-s opacity-0 cursor-pointer group-hover:opacity-100">
           <Icon type={IconType.edit} color="white" />

@@ -14,9 +14,22 @@ export enum SizeType {
 
 export type UserProps = {
   type: SizeType
+  fullName?: string
+  username?: string
+  timestamp?: string
 }
 
-export const User: FC<UserProps> = ({ type, ...props }) => {
+export const User: FC<UserProps> = ({
+  type,
+  fullName = 'John Doe',
+  username = 'johnny',
+  timestamp
+}) => {
+  // to do
+  // calculate the difference between the passed timestamp and now
+  // display difference as hours, days or years
+  // i.e. "vor 7 Tagen"
+
   return (
     <>
       {type !== SizeType.TILE ? (
@@ -27,13 +40,13 @@ export const User: FC<UserProps> = ({ type, ...props }) => {
             </div>
           )}
           <div className="flex flex-col">
-            <p className={`text-${type} mb-xs`}>Display Name</p>
+            <p className={`text-${type} mb-xs`}>{fullName}</p>
             <div className="flex">
               <div className="">
                 <IconLink
                   type={IconLinkType.violet}
                   icon={IconType.profile}
-                  text="Username"
+                  text={username}
                 />
               </div>
 
@@ -41,7 +54,7 @@ export const User: FC<UserProps> = ({ type, ...props }) => {
                 <IconLink
                   type={IconLinkType.slate}
                   icon={IconType.time}
-                  text="Timestamp"
+                  text={timestamp ? timestamp : 'Timestamp'}
                 />
               </div>
               {type == SizeType.XL && (
@@ -61,9 +74,9 @@ export const User: FC<UserProps> = ({ type, ...props }) => {
           <div className="grow-0 bg-white rounded-xl  p-s">
             <div className="flex flex-col items-center">
               <UserImage type={UserImageSizeType.LG} />
-              <p className="text-base text-center mt-s mb-xs">Display Name</p>
+              <p className="text-base text-center mt-s mb-xs">{fullName}</p>
               <p className="text-xs text-violet-600 text-center mb-s">
-                Username
+                {username}
               </p>
               <div className="flex w-full">
                 <Button
