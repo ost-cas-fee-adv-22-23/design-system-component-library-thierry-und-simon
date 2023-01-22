@@ -8,8 +8,11 @@ export default {
   argTypes: {
     type: { control: 'radio', options: SizeType },
     fullName: { control: 'text' },
-    username: { control: 'text' },
-    timestamp: { control: 'date' }
+    userName: { control: 'text' },
+    hometown: { control: 'text' },
+    datePosted: { control: 'date' },
+    dateJoined: { control: 'date' },
+    userImageSrc: { control: 'text' }
   },
   parameters: {
     backgrounds: {

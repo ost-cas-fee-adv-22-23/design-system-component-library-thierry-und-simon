@@ -16,11 +16,18 @@ export const ProfileHeader: FC = ({ ...props }) => {
           <UserImage type={UserImageSizeType.XL} />
         </div>
       </div>
-      <User type={SizeType.XL} />
+      <User
+        type={SizeType.XL}
+        fullName="Ruedi Müller"
+        userName="rmueller"
+        hometown="Zürich"
+        datePosted={new Date('2021-08-12').getTime()}
+        dateJoined={new Date('2020-02-12').getTime()}
+      />
       <p className="mt-s">
-        Ostschweizer mit Leidenschaft für Fussball, designaffin, nie ohne Bart,
-        Weinliebhaber, leichte Tendenz zu Football Manager-Sucht, kocht gerne
-        indisch, baut seit neustem Duplotürme und Brio-Bahnanlagen.
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua.
       </p>
     </div>
   )

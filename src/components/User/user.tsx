@@ -15,20 +15,56 @@ export enum SizeType {
 export type UserProps = {
   type: SizeType
   fullName?: string
-  username?: string
-  timestamp?: string
+  userName?: string
+  datePosted?: number
+  dateJoined?: number
+  hometown?: string
+  userImageSrc?: string
+}
+
+function getDateMessage(date) {
+  const now: number = new Date().getTime()
+  const difference: number = now - date
+  let message = ''
+
+  if (difference <= 60000) {
+    message = 'gerade jetzt'
+  } else if (difference > 60000 && difference < 3600000) {
+    const minuteCount = Math.round(difference / 60000)
+    message = `vor ${minuteCount} Minute${minuteCount > 1 ? 'n' : ''}`
+  } else if (difference > 3600000 && difference < 86400000) {
+    const hourCount = Math.round(difference / 3600000)
+    message = `vor ${hourCount} Stunde${hourCount > 1 ? 'n' : ''}`
+  } else if (difference > 86400000 && difference < 604800000) {
+    const dayCount = Math.round(difference / 86400000)
+    message = `vor ${dayCount} Tag${dayCount > 1 ? 'en' : ''}`
+  } else if (difference > 604800000 && difference < 31536000000) {
+    const weekCount = Math.round(difference / 604800000)
+    message = `vor ${weekCount} Woche${weekCount > 1 ? 'n' : ''}`
+  } else if (difference > 31536000000) {
+    const yearCount = Math.round(difference / 31536000000)
+    message = `vor ${yearCount} Jahr${yearCount > 1 ? 'en' : ''}`
+  }
+
+  return message
 }
 
 export const User: FC<UserProps> = ({
   type,
   fullName = 'John Doe',
-  username = 'johnny',
-  timestamp
+  userName = 'johnny',
+  datePosted = new Date().getTime(),
+  dateJoined = new Date().getTime(),
+  hometown = 'St. Gallen',
+  userImageSrc
 }) => {
   // to do
   // calculate the difference between the passed timestamp and now
   // display difference as hours, days or years
   // i.e. "vor 7 Tagen"
+
+  const datePostedMessage = getDateMessage(datePosted)
+  const dateJoinedMessage = getDateMessage(dateJoined)
 
   return (
     <>
@@ -36,7 +72,10 @@ export const User: FC<UserProps> = ({
         <div className="flex">
           {type == SizeType.SM && (
             <div className="mr-xs">
-              <UserImage type={UserImageSizeType.S} />
+              <UserImage
+                type={UserImageSizeType.S}
+                imgSrc={userImageSrc ? userImageSrc : undefined}
+              />
             </div>
           )}
           <div className="flex flex-col">
@@ -46,25 +85,35 @@ export const User: FC<UserProps> = ({
                 <IconLink
                   type={IconLinkType.violet}
                   icon={IconType.profile}
-                  text={username}
+                  text={userName}
                 />
               </div>
-
-              <div className="ml-s">
-                <IconLink
-                  type={IconLinkType.slate}
-                  icon={IconType.time}
-                  text={timestamp ? timestamp : 'Timestamp'}
-                />
-              </div>
-              {type == SizeType.XL && (
+              {type != SizeType.XL && (
                 <div className="ml-s">
                   <IconLink
                     type={IconLinkType.slate}
-                    icon={IconType.calender}
-                    text="Joined"
+                    icon={IconType.time}
+                    text={datePostedMessage}
                   />
                 </div>
+              )}
+              {type == SizeType.XL && (
+                <>
+                  <div className="ml-s">
+                    <IconLink
+                      type={IconLinkType.slate}
+                      icon={IconType.pin}
+                      text={hometown}
+                    />
+                  </div>
+                  <div className="ml-s">
+                    <IconLink
+                      type={IconLinkType.slate}
+                      icon={IconType.calender}
+                      text={dateJoinedMessage}
+                    />
+                  </div>
+                </>
               )}
             </div>
           </div>
@@ -76,7 +125,7 @@ export const User: FC<UserProps> = ({
               <UserImage type={UserImageSizeType.LG} />
               <p className="text-base text-center mt-s mb-xs">{fullName}</p>
               <p className="text-xs text-violet-600 text-center mb-s">
-                {username}
+                {userName}
               </p>
               <div className="flex w-full">
                 <Button
