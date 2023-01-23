@@ -49,7 +49,10 @@ exampleCard.args = {
   showProfileImage: true,
   children: (
     <>
-      <User type={SizeType.BASE} />
+      <User
+        type={SizeType.BASE}
+        userImageSrc="https://xsgames.co/randomusers/avatar.php?g=male"
+      />
 
       <p className="mt-m">
         Paragraph – Quia aut et aut. Sunt et eligendi similique enim qui quo

@@ -13,7 +13,10 @@ export const ProfileHeader: FC = ({ ...props }) => {
           />
         </div>
         <div className="absolute -bottom-xxl right-l">
-          <UserImage type={UserImageSizeType.XL} />
+          <UserImage
+            type={UserImageSizeType.XL}
+            imgSrc="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200"
+          />
         </div>
       </div>
       <User

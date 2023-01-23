@@ -58,24 +58,16 @@ export const User: FC<UserProps> = ({
   hometown = 'St. Gallen',
   userImageSrc
 }) => {
-  // to do
-  // calculate the difference between the passed timestamp and now
-  // display difference as hours, days or years
-  // i.e. "vor 7 Tagen"
-
   const datePostedMessage = getDateMessage(datePosted)
   const dateJoinedMessage = getDateMessage(dateJoined)
-
+  console.log(userImageSrc)
   return (
     <>
       {type !== SizeType.TILE ? (
         <div className="flex">
           {type == SizeType.SM && (
             <div className="mr-xs">
-              <UserImage
-                type={UserImageSizeType.S}
-                imgSrc={userImageSrc ? userImageSrc : undefined}
-              />
+              <UserImage type={UserImageSizeType.S} imgSrc={userImageSrc} />
             </div>
           )}
           <div className="flex flex-col">
@@ -122,7 +114,7 @@ export const User: FC<UserProps> = ({
         <div className="flex  w-auto grow-0">
           <div className="grow-0 bg-white rounded-xl  p-s">
             <div className="flex flex-col items-center">
-              <UserImage type={UserImageSizeType.LG} />
+              <UserImage type={UserImageSizeType.LG} imgSrc={userImageSrc} />
               <p className="text-base text-center mt-s mb-xs">{fullName}</p>
               <p className="text-xs text-violet-600 text-center mb-s">
                 {userName}

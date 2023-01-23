@@ -13,12 +13,8 @@ export type UserImageProps = {
   imgSrc?: string
 }
 
-export const UserImage: FC<UserImageProps> = ({
-  type,
-  imgSrc = 'https://xsgames.co/randomusers/avatar.php?g=male'
-}) => {
+export const UserImage: FC<UserImageProps> = ({ type, imgSrc }) => {
   let size = ''
-
   switch (type) {
     case UserImageSizeType.S:
       size = 'w-10 h-10'
@@ -35,10 +31,11 @@ export const UserImage: FC<UserImageProps> = ({
   }
 
   return (
-    <div
-      className={`rounded-full group bg-violet-200 relative overflow-hidden ${size}`}
-    >
-      <img className="" src={imgSrc} />
+    <div className={`rounded-full group bg-violet-200 relative ${size}`}>
+      <div className="absolute top-0 bottom-0 w-full rounded-full overflow-hidden">
+        <img src={imgSrc} />
+      </div>
+
       {type == UserImageSizeType.XL && (
         <div className="absolute bottom-0 right-0 rounded-full bg-slate-600 p-s opacity-0 cursor-pointer group-hover:opacity-100">
           <Icon type={IconType.edit} color="white" />
