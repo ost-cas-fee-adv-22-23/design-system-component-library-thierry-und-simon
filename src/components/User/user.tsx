@@ -22,7 +22,7 @@ export type UserProps = {
   userImageSrc?: string
 }
 
-function getDateMessage(date) {
+function getDateMessage(date: number) {
   const now: number = new Date().getTime()
   const difference: number = now - date
   let message = ''
