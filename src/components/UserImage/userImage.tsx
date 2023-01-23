@@ -10,7 +10,7 @@ export enum UserImageSizeType {
 
 export type UserImageProps = {
   type: UserImageSizeType
-  imgSrc: string
+  imgSrc?: string
 }
 
 export const UserImage: FC<UserImageProps> = ({ type, imgSrc }) => {

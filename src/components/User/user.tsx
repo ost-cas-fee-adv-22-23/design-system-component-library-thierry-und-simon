@@ -60,7 +60,7 @@ export const User: FC<UserProps> = ({
 }) => {
   const datePostedMessage = getDateMessage(datePosted)
   const dateJoinedMessage = getDateMessage(dateJoined)
-
+  console.log(userImageSrc)
   return (
     <>
       {type !== SizeType.TILE ? (
@@ -114,7 +114,7 @@ export const User: FC<UserProps> = ({
         <div className="flex  w-auto grow-0">
           <div className="grow-0 bg-white rounded-xl  p-s">
             <div className="flex flex-col items-center">
-              <UserImage type={UserImageSizeType.LG} />
+              <UserImage type={UserImageSizeType.LG} imgSrc={userImageSrc} />
               <p className="text-base text-center mt-s mb-xs">{fullName}</p>
               <p className="text-xs text-violet-600 text-center mb-s">
                 {userName}
