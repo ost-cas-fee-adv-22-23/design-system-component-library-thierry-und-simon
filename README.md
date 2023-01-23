@@ -108,7 +108,7 @@ module.exports = {
 
 ```
 
-1. The content Array needs to include the components from `node_modules` with `./node*modules/@smartive-education/thierry-simon-mumble/dist/\**/\_.{js,ts,jsx,tsx}``
+1. The content Array needs to include the components from `node_modules` with `./node\*modules/@smartive-education/thierry-simon-mumble/dist/\*\*/\_.{js,ts,jsx,tsx}``
 2. The presets from the custom config have to be added with ` presets: [ require('./node_modules/@smartive-education/thierry-simon-mumble/mumble-presets'), ],`
 
 With this configuration in place, the components can be used and the corresponding styles are applied.

@@ -1,10 +1,10 @@
 import React, { FC } from 'react'
 
-export type LinkProps = {
+export type FormWrapperProps = {
   children: React.ReactNode
   onSubmit: (event: React.FormEvent<HTMLFormElement>) => void
 }
 
-export const FormWrapper: FC<LinkProps> = ({ children, onSubmit }) => {
+export const FormWrapper: FC<FormWrapperProps> = ({ children, onSubmit }) => {
   return <form onSubmit={onSubmit}>{children}</form>
 }

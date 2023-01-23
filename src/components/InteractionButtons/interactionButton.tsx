@@ -7,7 +7,7 @@ export enum InteractionButtonType {
   share = 'share'
 }
 
-export type IconLinkProps = {
+type IconLinkProps = {
   type: InteractionButtonType
   count?: number
 }
