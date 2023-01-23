@@ -15,15 +15,18 @@ type IconLinkProps = {
 type ContentProps = {
   count: number
   color: string
+  animation?: boolean
 }
 
-const LikeContent: FC<ContentProps> = ({ count, color }) => {
+const LikeContent: FC<ContentProps> = ({ count, color, animation }) => {
   return (
     <>
-      <Icon
-        type={count === 0 ? IconType.like : IconType.like_dark}
-        color={count === 0 ? color : '#EC4899'}
-      />
+      <span className={animation ? 'animate-[ping_500ms_ease-in-out]' : ''}>
+        <Icon
+          type={count === 0 ? IconType.like : IconType.like_dark}
+          color={count === 0 ? color : '#EC4899'}
+        />
+      </span>
       <p
         className={
           count === 0
@@ -37,13 +40,15 @@ const LikeContent: FC<ContentProps> = ({ count, color }) => {
   )
 }
 
-const CommentContent: FC<ContentProps> = ({ count, color }) => {
+const CommentContent: FC<ContentProps> = ({ count, color, animation }) => {
   return (
     <>
-      <Icon
-        type={count === 0 ? IconType.bubble : IconType.bubble_dark}
-        color={count === 0 ? color : '#7C3AED'}
-      />
+      <span className={animation ? 'animate-[ping_500ms_ease-in-out]' : ''}>
+        <Icon
+          type={count === 0 ? IconType.bubble : IconType.bubble_dark}
+          color={count === 0 ? color : '#7C3AED'}
+        />
+      </span>
       <p className="text-slate-600 hover:text-violet-600">
         {count === 0 ? 'Comment' : `${count} Comments`}
       </p>
@@ -51,10 +56,12 @@ const CommentContent: FC<ContentProps> = ({ count, color }) => {
   )
 }
 
-const CopyContent: FC<ContentProps> = ({ color }) => {
+const CopyContent: FC<ContentProps> = ({ color, animation }) => {
   return (
     <>
-      <Icon type={IconType.share} color={color} />
+      <span className={animation ? 'animate-[ping_500ms_ease-in-out]' : ''}>
+        <Icon type={IconType.share} color={color} />
+      </span>
       <p className="text-slate-600">Copy Link</p>
     </>
   )
@@ -62,6 +69,7 @@ const CopyContent: FC<ContentProps> = ({ color }) => {
 
 export const InteractionButton: FC<IconLinkProps> = ({ type, count = 0 }) => {
   const [hover, setHover] = useState(false)
+  const [animation, setAnimation] = useState(false)
   const color =
     !hover || type === InteractionButtonType.share
       ? '#475569'
@@ -82,13 +90,14 @@ export const InteractionButton: FC<IconLinkProps> = ({ type, count = 0 }) => {
       }`}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
+      onClick={() => setAnimation(true)}
     >
       {type === InteractionButtonType.like ? (
-        <LikeContent count={count} color={color} />
+        <LikeContent animation={animation} count={count} color={color} />
       ) : type === InteractionButtonType.comment ? (
-        <CommentContent count={count} color={color} />
+        <CommentContent animation={animation} count={count} color={color} />
       ) : (
-        <CopyContent count={count} color={color} />
+        <CopyContent animation={animation} count={count} color={color} />
       )}
     </button>
   )

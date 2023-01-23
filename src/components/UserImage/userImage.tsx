@@ -33,7 +33,7 @@ export const UserImage: FC<UserImageProps> = ({ type, imgSrc }) => {
   return (
     <div className={`rounded-full group bg-violet-200 relative ${size}`}>
       <div className="absolute top-0 bottom-0 w-full rounded-full overflow-hidden">
-        <img src={imgSrc} />
+        <img src={imgSrc} className="hover:scale-125 transition-transform" />
       </div>
 
       {type == UserImageSizeType.XL && (
