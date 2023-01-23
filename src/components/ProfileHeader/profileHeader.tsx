@@ -5,8 +5,8 @@ import { UserImage, UserImageSizeType } from '../UserImage/userImage'
 export const ProfileHeader: FC = ({ ...props }) => {
   return (
     <div>
-      <div className="w-100 pt-16/9 bg-violet-200 rounded-lg relative mb-l relative">
-        <div className="overflow-hidden absolute w-full h-full top-0 bottom-0 overflow-hidden rounded-lg">
+      <div className="w-100 pt-16/9 bg-violet-200 rounded-lg relative mb-l ">
+        <div className="overflow-hidden absolute w-full h-full top-0 bottom-0  rounded-lg">
           <img
             className="object-cover w-full h-full"
             src={'https://picsum.photos/800/600'}
