@@ -15,8 +15,7 @@ export type CardProps = {
 export const Card: FC<CardProps> = ({
   showProfileImage,
   children,
-  roundedBorders = true,
-  ...props
+  roundedBorders = true
 }) => {
   return (
     <div

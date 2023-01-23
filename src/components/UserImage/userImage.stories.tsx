@@ -7,7 +7,9 @@ export default {
   component: UserImage,
   argTypes: {
     type: { control: 'radio', options: UserImageSizeType },
-    imgSrc: { control: 'text' }
+    imgSrc: {
+      control: 'text'
+    }
   }
 } as ComponentMeta<typeof UserImage>
 

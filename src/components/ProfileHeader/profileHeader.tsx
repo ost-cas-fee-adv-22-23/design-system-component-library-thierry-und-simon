@@ -23,6 +23,7 @@ export const ProfileHeader: FC = ({ ...props }) => {
         hometown="Zürich"
         datePosted={new Date('2021-08-12').getTime()}
         dateJoined={new Date('2020-02-12').getTime()}
+        userImageSrc="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200"
       />
       <p className="mt-s">
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
