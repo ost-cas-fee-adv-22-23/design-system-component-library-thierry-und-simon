@@ -47,12 +47,11 @@ emptyCardInline.args = {
 
 exampleCard.args = {
   showProfileImage: true,
+  profileImageUrl:
+    'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200',
   children: (
     <>
-      <User
-        type={SizeType.BASE}
-        userImageSrc="https://xsgames.co/randomusers/avatar.php?g=male"
-      />
+      <User type={SizeType.BASE} />
 
       <p className="mt-m">
         Paragraph – Quia aut et aut. Sunt et eligendi similique enim qui quo
@@ -60,7 +59,14 @@ exampleCard.args = {
         Deserunt pariatur molestiae incidunt. Omnis deserunt ratione et
         recusandae quos excepturi ut deleniti ut repellat magni.
       </p>
-      <div className="my-m rounded-lg bg-violet-200 w-100 w-100 pt-16/9"></div>
+      <div className="my-m rounded-lg bg-violet-200 w-100 w-100 pt-16/9 relative">
+        <div className="overflow-hidden absolute w-full h-full top-0 bottom-0  rounded-lg">
+          <img
+            className="object-cover w-full h-full"
+            src={'https://picsum.photos/800/600'}
+          />
+        </div>
+      </div>
       <div className="flex">
         <div>
           <InteractionButton type={InteractionButtonType.comment} count={0} />
@@ -90,7 +96,14 @@ exampleCardInline.args = {
         recusandae quos excepturi ut deleniti ut repellat magni.
       </p>
 
-      <div className="my-m rounded-lg bg-violet-200 w-100 w-100 pt-16/9"></div>
+      <div className="my-m rounded-lg bg-violet-200 w-100 w-100 pt-16/9 relative">
+        <div className="overflow-hidden absolute w-full h-full top-0 bottom-0  rounded-lg">
+          <img
+            className="object-cover w-full h-full"
+            src={'https://picsum.photos/800/600'}
+          />
+        </div>
+      </div>
       <div className="flex">
         <div>
           <InteractionButton type={InteractionButtonType.comment} count={0} />

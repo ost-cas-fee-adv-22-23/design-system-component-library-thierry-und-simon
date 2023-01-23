@@ -8,6 +8,7 @@ export enum CardType {
 
 export type CardProps = {
   showProfileImage: boolean
+  profileImageUrl?: string
   roundedBorders: boolean
   children: ReactNode
 }
@@ -15,7 +16,8 @@ export type CardProps = {
 export const Card: FC<CardProps> = ({
   showProfileImage,
   children,
-  roundedBorders = true
+  roundedBorders = true,
+  profileImageUrl
 }) => {
   return (
     <div
@@ -25,7 +27,7 @@ export const Card: FC<CardProps> = ({
     >
       {showProfileImage && (
         <div className="absolute -left-l">
-          <UserImage type={UserImageSizeType.M} />
+          <UserImage type={UserImageSizeType.M} imgSrc={profileImageUrl} />
         </div>
       )}
 
