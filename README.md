@@ -8,40 +8,6 @@
 ![GitHub Issues](https://img.shields.io/github/issues/smartive-education/design-system-component-library-thierry-und-simon)
 ![Github PR](https://img.shields.io/github/issues-pr/smartive-education/design-system-component-library-thierry-und-simon)
 
-## Contributing Guidelines
-
-To contribute to the project, please follow the below guidelines.
-
-- Open a GitHub Issue for each necessary fix or change
-- Always work in your own branche and create pull request if ready to merge into master
-- we use semantic commit messages and always include the issue number as part of the commit message.
-
-More infos on semantic commits and comit messages:
-
-```
-feat: #Issue No description
-^--^  ^-------^ ^----------^
-|
-+-------> Type: chore, docs, feat, fix, refactor, style, or test.
-```
-
-More Examples:
-
-- `feat`: (new feature for the user, not a new feature for build script)
-- `fix`: (bug fix for the user, not a fix to a build script)
-- `docs`: (changes to the documentation)
-- `style`: (formatting, missing semi colons, etc; no production code change)
-- `refactor`: (refactoring production code, eg. renaming a variable)
-- `test`: (adding missing tests, refactoring tests; no production code change)
-- `chore`: (updating grunt tasks etc; no production code change)
-
-References:
-
-- https://www.conventionalcommits.org/
-- https://seesparkbox.com/foundry/semantic_commit_messages
-- http://karma-runner.github.io/1.0/dev/git-commit-msg.html
-- https://gist.githubusercontent.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716/raw/e75b1b9536ee5ee82e2ec0ba8948d8f8238488c3/semantic-commit-messages.md
-
 ## Deployment
 
     @@ -59,29 +25,6 @@ Please ensure the following prerequisites are met:
@@ -113,22 +79,54 @@ module.exports = {
 
 With this configuration in place, the components can be used and the corresponding styles are applied.
 
-## Doku
-
-Scripts zum Build:
-´npm run build´ legt einen neuen dist folder an, welcher dann deployed werden kann. Im Moment ist dieser mittels gitignore nicht im Repo. Damit die Components in einem neuen Repo genutzt werden können, muss man wie folgt vorgehen:
-
-1. neues Projekt anlegen
-2. npm install npm install https://github.com/smartive-education/design-system-component-library-thierry-und-simon/tree/v1.1.0 ausführen
-3. Komponenten nutzen und mit import {Button, ButtonType } from "@smartive-education/mumble"; importieren.
-4. Projekt muss Tailwind installiert haben, damit die Klassen erkannt werden.
-
-[Todo:] Check ob dist Folder ins Repo soll / Check ob Tailwind Teil des Bundles sein muss?
-
 ### Icons
 
-Die Icons können als SVG Files im Folder assets abgelegt werden. Mit dem command `npm run svgr` werden daraus React Components erstellt, welche in `src/Icons`abgelegt sind. Wenn neue Icons hinzugeüfgt werden, müssen die danach in der Icon Komponenten importiert und hinzugeüfgt werden.
+SVG Icons are transformed to React Components with the help of [SVGR](https://react-svgr.com/docs/getting-started/). Icons are built via CLI command. If new SVG Icons are added, the command has to run once to generate the new component.
 
-Die Icon-Komponente wird danch importiert und verwendet. Es werden zwei Props erwartet: Type (Type des Icons und color (Farbe, Standard Slate)).
+```
+npm run svgr
+```
 
-Um
+is the command to run. All SVG files from the `assets/icons` Folder are transformed with the follogin options:
+
+- Typescript Files are generated (`.tsx`)
+- all color Attributes are removed and replaced with `props.color`
+- are generated with a default size of 1em x 1em (can be overwritten)
+- are save in `src/Icons`
+
+## Contributing Guidelines
+
+> The Guidelines changed many times over the las few weeks and were always adjusted when neede. Therefore, older issues, commits and pr's may not comply
+
+To contribute to the project, please follow the below guidelines.
+
+- Open a GitHub Issue for each necessary fix or change
+- Each issue gets its own branch which is name "gh{issue-no}"
+- we use semantic commit messages and always include the issue number as part of the commit message. For example: "fix: #23 Example description of work performed"
+- Documentation and information of teammembers is done via issue.
+
+More infos on semantic commits and comit messages:
+
+```
+feat: #Issue No description
+^--^  ^-------^ ^----------^
+|
++-------> Type: chore, docs, feat, fix, refactor, style, or test.
+```
+
+More Examples:
+
+- `feat`: (new feature for the user, not a new feature for build script)
+- `fix`: (bug fix for the user, not a fix to a build script)
+- `docs`: (changes to the documentation)
+- `style`: (formatting, missing semi colons, etc; no production code change)
+- `refactor`: (refactoring production code, eg. renaming a variable)
+- `test`: (adding missing tests, refactoring tests; no production code change)
+- `chore`: (updating grunt tasks etc; no production code change)
+
+References:
+
+- https://www.conventionalcommits.org/
+- https://seesparkbox.com/foundry/semantic_commit_messages
+- http://karma-runner.github.io/1.0/dev/git-commit-msg.html
+- https://gist.githubusercontent.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716/raw/e75b1b9536ee5ee82e2ec0ba8948d8f8238488c3/semantic-commit-messages.md
