@@ -17,7 +17,8 @@ const Template: ComponentStory<typeof InteractionButton> = (args) => (
 
 export const IconLinkComponentLike = Template.bind({})
 IconLinkComponentLike.args = {
-  type: InteractionButtonType.like
+  type: InteractionButtonType.like,
+  count: 0
 }
 export const IconLinkComponentLikeCount = Template.bind({})
 IconLinkComponentLikeCount.args = {
@@ -26,7 +27,8 @@ IconLinkComponentLikeCount.args = {
 }
 export const IconLinkComponentComment = Template.bind({})
 IconLinkComponentComment.args = {
-  type: InteractionButtonType.comment
+  type: InteractionButtonType.comment,
+  count: 0
 }
 export const IconLinkComponentCommentCount = Template.bind({})
 IconLinkComponentCommentCount.args = {
@@ -35,5 +37,6 @@ IconLinkComponentCommentCount.args = {
 }
 export const IconLinkComponentCopy = Template.bind({})
 IconLinkComponentCopy.args = {
-  type: InteractionButtonType.share
+  type: InteractionButtonType.share,
+  count: 0
 }

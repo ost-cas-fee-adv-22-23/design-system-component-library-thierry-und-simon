@@ -6,7 +6,8 @@ export default {
   title: 'Components/Link',
   component: Link,
   argTypes: {
-    children: {}
+    children: {},
+    link: { control: 'text' }
   }
 } as ComponentMeta<typeof Link>
 
@@ -15,3 +16,6 @@ const Template: ComponentStory<typeof Link> = (args) => (
 )
 
 export const LinkComponent = Template.bind({})
+LinkComponent.args = {
+  link: 'https://www.mumble.com'
+}

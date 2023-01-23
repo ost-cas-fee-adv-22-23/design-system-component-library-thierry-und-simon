@@ -19,10 +19,14 @@ const Template: ComponentStory<typeof Textarea> = (args) => (
 export const TextareaComponentSmall = Template.bind({})
 TextareaComponentSmall.args = {
   rows: 5,
-  placeholder: "Was gibt's neues?"
+  placeholder: "Was gibt's neues?",
+  label: 'Textarea',
+  id: 'textarea'
 }
 export const TextareaComponentLarge = Template.bind({})
 TextareaComponentLarge.args = {
   rows: 5,
-  placeholder: 'Deine Meinung zählt!'
+  placeholder: 'Deine Meinung zählt!',
+  label: 'Textarea',
+  id: 'textarea'
 }

@@ -33,7 +33,8 @@ export default {
         'SvgViews'
       ],
       control: { type: 'select' }
-    }
+    },
+    size: { control: 'number' }
   }
 } as ComponentMeta<typeof Icon>
 
@@ -41,5 +42,6 @@ const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args} />
 
 export const IconComponent = Template.bind({})
 IconComponent.args = {
-  type: IconType.mumble
+  type: IconType.mumble,
+  size: 16
 }

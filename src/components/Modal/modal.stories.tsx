@@ -6,13 +6,11 @@ export default {
   title: 'Layout/Modal',
   component: Modal,
   argTypes: {
-    children: {},
     type: {
       control: 'radio',
       options: ['default', 'settings', 'upload']
     },
-    title: { control: 'text' },
-    initialState: { control: 'boolean' }
+    title: { control: 'text' }
   }
 } as ComponentMeta<typeof Modal>
 
@@ -23,7 +21,6 @@ const Template: ComponentStory<typeof Modal> = (args) => (
 export const ModalComponent = Template.bind({})
 ModalComponent.args = {
   device: 'desktop',
-  initialState: true,
   title: 'Modal'
 }
 export const ModalComponentMobile = Template.bind({})
