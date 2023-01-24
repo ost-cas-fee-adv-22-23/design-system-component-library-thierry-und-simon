@@ -14,4 +14,4 @@ const Template: ComponentStory<typeof FileUpload> = (args) => (
   <FileUpload {...args} />
 )
 
-export const FielUploadComponent = Template.bind({})
+export const FileUploadComponent = Template.bind({})

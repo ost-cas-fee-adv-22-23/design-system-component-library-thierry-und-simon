@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC } from 'react'
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { Tab } = require('@headlessui/react')
 

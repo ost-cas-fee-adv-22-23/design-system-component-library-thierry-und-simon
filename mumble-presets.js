@@ -34,6 +34,7 @@ module.exports = {
         xl: '16px'
       },
       borderWidth: {
+        sm: '4px',
         md: '6px'
       }
     }
