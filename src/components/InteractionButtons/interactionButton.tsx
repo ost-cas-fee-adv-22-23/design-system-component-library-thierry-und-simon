@@ -26,7 +26,6 @@ const LikeContent: FC<ContentProps> = ({ count }) => {
   const [liked, setLiked] = useState(false)
   const [localCount, setLocalCount] = useState(count)
   const [hover, setHover] = useState(false)
-  console.log(count)
 
   useEffect(() => {
     setLocalCount(count)
@@ -103,13 +102,13 @@ const CopyContent: FC<ContentProps> = () => {
 
   return (
     <button
-      className={`${classes.wrapperGeneral}  hover:bg-slate-100 text-slate-60`}
+      className={`${classes.wrapperGeneral}  hover:bg-slate-100 text-slate-600`}
       onClick={() => {
         handleClick()
       }}
     >
       <Icon type={IconType.share} color={iconColor} />
-      <p className="text-slate-600">{clicked ? 'Link copied' : 'Copy Link'}</p>
+      <p>{clicked ? 'Link copied' : 'Copy Link'}</p>
     </button>
   )
 }
