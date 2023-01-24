@@ -3,8 +3,6 @@ import React, { FC, useState } from 'react'
 const { Tab } = require('@headlessui/react')
 
 export const Toggle: FC = () => {
-  const [enabled, setEnabled] = useState(false)
-
   const styledTabs =
     'rounded-md ui-selected:bg-white hover:text-slate-600 ui-selected:text-violet-600  py-xs px-s transition-colors	'
 
