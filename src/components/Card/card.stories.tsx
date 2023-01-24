@@ -121,6 +121,8 @@ exampleCardInline.args = {
 
 writeCard.args = {
   showProfileImage: true,
+  profileImageUrl:
+    'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200',
   children: (
     <>
       <div className="mb-s">
