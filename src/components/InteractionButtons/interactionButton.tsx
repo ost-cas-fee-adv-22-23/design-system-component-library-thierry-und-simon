@@ -114,7 +114,6 @@ const CopyContent: FC<ContentProps> = () => {
 }
 
 export const InteractionButton: FC<IconLinkProps> = ({ type, count = 0 }) => {
-  console.log(type)
   return (
     <>
       {type === InteractionButtonType.like ? (
