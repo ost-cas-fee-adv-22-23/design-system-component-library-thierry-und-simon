@@ -10,7 +10,7 @@
 
 ## Deployment
 
-    @@ -59,29 +25,6 @@ Please ensure the following prerequisites are met:
+    Please ensure the following prerequisites are met:
 
 - When trying with `npm pack`, all your required files are included in the resulting tarball
 - Your `package.json` file contains the correct _scope_ for your package (`@smartive-education`)
