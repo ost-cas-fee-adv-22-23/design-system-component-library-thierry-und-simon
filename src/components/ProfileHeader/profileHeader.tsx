@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { SizeType, User } from '../User/user'
 import { UserImage, UserImageSizeType } from '../UserImage/userImage'
 
-export const ProfileHeader: FC = ({ ...props }) => {
+export const ProfileHeader: FC = () => {
   return (
     <div>
       <div className="w-100 pt-16/9 bg-violet-200 rounded-lg relative mb-l ">
