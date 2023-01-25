@@ -1,9 +1,7 @@
-import React, { FC } from 'react'
+import React from 'react'
 import { Icon, IconType } from '../../Icon/icon'
 
-export type FileUploadProps = {}
-
-export const FileUpload: FC<FileUploadProps> = () => {
+export const FileUpload = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full mx-l">
       <label
