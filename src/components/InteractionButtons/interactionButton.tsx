@@ -25,7 +25,6 @@ const classes = {
 const LikeContent: FC<ContentProps> = ({ count }) => {
   const [liked, setLiked] = useState(false)
   const [localCount, setLocalCount] = useState(count)
-  const [hover, setHover] = useState(false)
 
   useEffect(() => {
     setLocalCount(count)
@@ -41,9 +40,6 @@ const LikeContent: FC<ContentProps> = ({ count }) => {
     }
   }
 
-  const currentIconColor =
-    hover || (localCount > 0 && liked) ? '#EC4899' : '#475569'
-
   return (
     <button
       className={`${classes.wrapperGeneral}  hover:bg-pink-50 ${
@@ -52,12 +48,9 @@ const LikeContent: FC<ContentProps> = ({ count }) => {
           : 'text-slate-600 hover:text-pink-600'
       }`}
       onClick={() => handleLike()}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
     >
       <Icon
         type={localCount === 0 || !liked ? IconType.like : IconType.like_dark}
-        color={currentIconColor}
       />
       <p>
         {localCount === 0
@@ -69,19 +62,11 @@ const LikeContent: FC<ContentProps> = ({ count }) => {
 }
 
 const CommentContent: FC<ContentProps> = ({ count }) => {
-  const [hover, setHover] = useState(false)
-
-  const currentIconColor = hover || count > 0 ? '#7C3AED' : '#475569'
 
   return (
-    <button
-      className={`${classes.wrapperGeneral}  hover:bg-violet-50 text-slate-600 hover:text-violet-600`}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-    >
+    <button className={`${classes.wrapperGeneral}  hover:bg-violet-50 text-slate-600 hover:text-violet-600`}>
       <Icon
         type={count === 0 ? IconType.bubble : IconType.bubble_dark}
-        color={currentIconColor}
       />
       <p>{count === 0 ? 'Comment' : `${count} Comments`}</p>
     </button>
@@ -89,7 +74,6 @@ const CommentContent: FC<ContentProps> = ({ count }) => {
 }
 
 const CopyContent: FC<ContentProps> = () => {
-  const iconColor = '#475569'
   const [clicked, setClicked] = useState(false)
 
   function handleClick() {
@@ -107,7 +91,7 @@ const CopyContent: FC<ContentProps> = () => {
         handleClick()
       }}
     >
-      <Icon type={IconType.share} color={iconColor} />
+      <Icon type={IconType.share}/>
       <p>{clicked ? 'Link copied' : 'Copy Link'}</p>
     </button>
   )
