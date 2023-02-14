@@ -83,5 +83,5 @@ export const Icon: FC<IconProps> = ({ type, size = 16 }) => {
 
   const SvgIcon = icons[type]
 
-  return <SvgIcon width={size} height={size} fill='currentColor' />
+  return <SvgIcon width={size} height={size} fill="currentColor" />
 }

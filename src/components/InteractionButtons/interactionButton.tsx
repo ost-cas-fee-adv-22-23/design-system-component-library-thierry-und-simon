@@ -62,12 +62,11 @@ const LikeContent: FC<ContentProps> = ({ count }) => {
 }
 
 const CommentContent: FC<ContentProps> = ({ count }) => {
-
   return (
-    <button className={`${classes.wrapperGeneral}  hover:bg-violet-50 text-slate-600 hover:text-violet-600`}>
-      <Icon
-        type={count === 0 ? IconType.bubble : IconType.bubble_dark}
-      />
+    <button
+      className={`${classes.wrapperGeneral}  hover:bg-violet-50 text-slate-600 hover:text-violet-600`}
+    >
+      <Icon type={count === 0 ? IconType.bubble : IconType.bubble_dark} />
       <p>{count === 0 ? 'Comment' : `${count} Comments`}</p>
     </button>
   )
@@ -91,7 +90,7 @@ const CopyContent: FC<ContentProps> = () => {
         handleClick()
       }}
     >
-      <Icon type={IconType.share}/>
+      <Icon type={IconType.share} />
       <p>{clicked ? 'Link copied' : 'Copy Link'}</p>
     </button>
   )

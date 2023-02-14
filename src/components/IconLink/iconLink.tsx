@@ -25,7 +25,6 @@ const classes = {
 }
 
 export const IconLink: FC<IconLinkProps> = ({ type, icon, text }) => {
-
   return (
     <div className={`${classes.wrapperGeneral} ${classes.wrapperColor(type)}`}>
       <Icon type={icon} />
