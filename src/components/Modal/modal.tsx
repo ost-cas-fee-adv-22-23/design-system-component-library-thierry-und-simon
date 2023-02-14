@@ -45,7 +45,7 @@ export const Modal: FC<ModalProps> = ({
         <section className={classes.title}>
           <h3 className={classes.titleContent}>{title}</h3>
           <span onClick={() => setOpen(false)}>
-            <Icon type={IconType.cancel} color="#ffffff" />
+            <Icon type={IconType.cancel} />
           </span>
         </section>
         <section className={classes.bodyContent}>{children}</section>

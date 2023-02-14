@@ -23,7 +23,7 @@ export const Input: FC<InputProps> = ({ label, type, id, placeholder }) => {
             className="absolute flex items-center right-0 inset-y-0 pr-3"
             onClick={() => setShowPassword(!showPassword)}
           >
-            <Icon type={IconType.views} color="#64748B" />
+            <Icon type={IconType.views} />
           </div>
         )}
         <input

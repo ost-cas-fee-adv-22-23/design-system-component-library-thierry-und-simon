@@ -126,7 +126,7 @@ export const User: FC<UserProps> = ({
                   size={ButtonSize.medium}
                 >
                   <span className="ml-xs">
-                    <Icon type={IconType.mumble} color="white" />
+                    <Icon type={IconType.mumble} />
                   </span>
                 </Button>
               </div>
