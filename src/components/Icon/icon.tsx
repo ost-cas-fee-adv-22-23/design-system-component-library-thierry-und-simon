@@ -50,12 +50,11 @@ export enum IconType {
 }
 
 export type IconProps = {
-  color: string
   size?: number
   type: IconType
 }
 
-export const Icon: FC<IconProps> = ({ type, color = '#475569', size = 16 }) => {
+export const Icon: FC<IconProps> = ({ type, size = 16 }) => {
   const icons = {
     SvgMumble,
     SvgProfile,
@@ -84,5 +83,5 @@ export const Icon: FC<IconProps> = ({ type, color = '#475569', size = 16 }) => {
 
   const SvgIcon = icons[type]
 
-  return <SvgIcon width={size} height={size} color={color} />
+  return <SvgIcon width={size} height={size} fill='currentColor' />
 }
