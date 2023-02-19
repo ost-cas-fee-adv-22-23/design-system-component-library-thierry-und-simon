@@ -8,7 +8,7 @@ export const FileUpload = () => {
         htmlFor="drop"
         className="flex flex-col items-center justify-center w-full h-64 border-2 border-slate-200 border-dashed rounded cursor-pointer bg-slate-100"
       >
-        <Icon type={IconType.upload} color="#64748B" />
+        <Icon type={IconType.upload} />
         <span className="text-[24px] text-bold text-slate-500">
           Datei hierhin ziehen...
         </span>
@@ -21,7 +21,7 @@ export const FileUpload = () => {
         htmlFor="file-upload"
       >
         <span className="mr-[9px]">...oder Datei auswählen</span>
-        <Icon type={IconType.upload} color="#64748B" />
+        <Icon type={IconType.upload} />
       </label>
       <input id="file-upload" className="hidden" type="file" />
     </div>

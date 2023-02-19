@@ -60,7 +60,7 @@ export const Button: FC<ButtonProps> = ({
       {...props}
     >
       {size == ButtonSize.nolabel ? (
-        <Icon type={IconType.mumble} color="white" />
+        <Icon type={IconType.mumble} />
       ) : (
         <span className="mx-auto flex">
           {label}

@@ -51,7 +51,7 @@ export const UserImage: FC<UserImageProps> = ({ type, imgSrc }) => {
 
       {type == UserImageSizeType.XL && (
         <div className="absolute -bottom-2 -right-2 rounded-full border-sm border-slate-100 bg-slate-600 p-s opacity-0 cursor-pointer group-hover:opacity-100">
-          <Icon type={IconType.edit} color="white" />
+          <Icon type={IconType.edit} />
         </div>
       )}
     </div>
