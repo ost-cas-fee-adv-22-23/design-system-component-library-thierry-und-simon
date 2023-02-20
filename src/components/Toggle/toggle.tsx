@@ -8,11 +8,7 @@ export const Toggle: FC = () => {
 
   return (
     <div className="flex">
-      <Tab.Group
-        onChange={(index: number) => {
-          console.log('Changed selected tab to:', index)
-        }}
-      >
+      <Tab.Group>
         <Tab.List className="rounded-lg bg-slate-200 p-xxs">
           <Tab className={`${styledTabs}`}>
             <p>Deine Mumbles</p>
