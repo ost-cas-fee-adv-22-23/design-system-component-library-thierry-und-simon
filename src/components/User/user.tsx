@@ -3,6 +3,9 @@ import { Button, ButtonColor, ButtonSize } from '../Button/button'
 import { UserImage, UserImageSizeType } from '../UserImage/userImage'
 import { IconLink, IconLinkType } from '../IconLink/iconLink'
 import { Icon, IconType } from '../Icon/icon'
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
+import 'dayjs/locale/de'
 
 export enum SizeType {
   SM = 'sm',
@@ -23,30 +26,10 @@ export type UserProps = {
 }
 
 function getDateMessage(date: number) {
-  const now: number = new Date().getTime()
-  const difference: number = now - date
-  let message = ''
+  dayjs.locale('de')
+  dayjs.extend(relativeTime)
 
-  if (difference <= 60000) {
-    message = 'gerade jetzt'
-  } else if (difference > 60000 && difference < 3600000) {
-    const minuteCount = Math.round(difference / 60000)
-    message = `vor ${minuteCount} Minute${minuteCount > 1 ? 'n' : ''}`
-  } else if (difference > 3600000 && difference < 86400000) {
-    const hourCount = Math.round(difference / 3600000)
-    message = `vor ${hourCount} Stunde${hourCount > 1 ? 'n' : ''}`
-  } else if (difference > 86400000 && difference < 604800000) {
-    const dayCount = Math.round(difference / 86400000)
-    message = `vor ${dayCount} Tag${dayCount > 1 ? 'en' : ''}`
-  } else if (difference > 604800000 && difference < 31536000000) {
-    const weekCount = Math.round(difference / 604800000)
-    message = `vor ${weekCount} Woche${weekCount > 1 ? 'n' : ''}`
-  } else if (difference > 31536000000) {
-    const yearCount = Math.round(difference / 31536000000)
-    message = `vor ${yearCount} Jahr${yearCount > 1 ? 'en' : ''}`
-  }
-
-  return message
+  return dayjs(date).fromNow()
 }
 
 export const User: FC<UserProps> = ({
@@ -60,7 +43,7 @@ export const User: FC<UserProps> = ({
 }) => {
   const datePostedMessage = getDateMessage(datePosted)
   const dateJoinedMessage = getDateMessage(dateJoined)
-  console.log(userImageSrc)
+
   return (
     <>
       {type !== SizeType.TILE ? (
