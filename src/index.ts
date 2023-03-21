@@ -1,4 +1,5 @@
 export * from './components/Button/button'
+export * from './components/NaviButton/naviButton'
 export * from './components/Card/card'
 export * from './components/Forms/Input/input'
 export * from './components/Forms/Textarea/textarea'
