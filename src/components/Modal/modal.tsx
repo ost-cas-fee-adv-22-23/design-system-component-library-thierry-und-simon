@@ -10,13 +10,14 @@ export type ModalProps = {
   device: ModalDevice
   title: string
   children: React.ReactNode
-  initialState: boolean
+  isOpen: boolean
+  setIsOpen: any
 }
 
 const classes = {
   wrapper: (open: boolean) => {
     return open
-      ? 'flex justify-center align-center w-screen h-screen bg-slate-100'
+      ? 'fixed flex justify-center align-center w-full h-full top-0 left-0 bg-transparent'
       : 'hidden'
   },
   modal: (device: ModalDevice) => {
@@ -24,7 +25,7 @@ const classes = {
       mobile: 'w-10/12 max-w-md',
       desktop: 'w-1/2'
     }
-    return `${classesMap[device]} m-xl bg-white rounded-lg`
+    return `${classesMap[device]} m-xl bg-white rounded-lg z-10`
   },
   title:
     'flex items-center justify-between h-[88px] px-l bg-violet-600 rounded-t-lg',
@@ -36,15 +37,17 @@ export const Modal: FC<ModalProps> = ({
   children,
   title,
   device,
-  initialState
+  isOpen = false,
+  setIsOpen
 }) => {
-  const [open, setOpen] = useState(initialState)
+  console.log('test')
   return (
-    <div className={classes.wrapper(open)}>
+    <div className={classes.wrapper(isOpen)}>
+      <div className="z-1 modal-overlay absolute w-full h-full bg-slate-400 opacity-50"></div>
       <section className={classes.modal(device)}>
         <section className={classes.title}>
           <h3 className={classes.titleContent}>{title}</h3>
-          <span onClick={() => setOpen(false)}>
+          <span onClick={() => setIsOpen(false)}>
             <Icon type={IconType.cancel} />
           </span>
         </section>
