@@ -26,18 +26,18 @@ ModalComponent.args = {
 export const ModalComponentMobile = Template.bind({})
 ModalComponentMobile.args = {
   device: 'mobile',
-  initialState: true,
+  isOpen: true,
   title: 'Modal'
 }
 export const ModalComponentSettings = Template.bind({})
 ModalComponentSettings.args = {
   device: 'mobile',
-  initialState: true,
+  isOpen: true,
   title: 'Settings'
 }
 export const ModalComponentUpload = Template.bind({})
 ModalComponentUpload.args = {
   device: 'mobile',
-  initialState: true,
+  isOpen: true,
   title: 'Bild hochladen'
 }
