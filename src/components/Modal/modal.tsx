@@ -40,6 +40,7 @@ export const Modal: FC<ModalProps> = ({
   isOpen = false,
   setIsOpen
 }) => {
+  console.log('test')
   return (
     <div className={classes.wrapper(isOpen)}>
       <div className="z-1 modal-overlay absolute w-full h-full bg-slate-400 opacity-50"></div>
