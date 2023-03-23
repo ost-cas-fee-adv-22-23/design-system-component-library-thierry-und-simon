@@ -50,6 +50,7 @@ export const Button: FC<ButtonProps> = ({
   size,
   label,
   children,
+  onClick,
   ...props
 }) => {
   return (
