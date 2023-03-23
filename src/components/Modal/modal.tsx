@@ -17,7 +17,7 @@ export type ModalProps = {
 const classes = {
   wrapper: (open: boolean) => {
     return open
-      ? 'fixed flex justify-center align-center w-full h-full top-0 left-0 bg-transparent'
+      ? 'z-10 fixed flex justify-center align-center w-full h-full top-0 left-0 bg-transparent'
       : 'hidden'
   },
   modal: (device: ModalDevice) => {
@@ -28,7 +28,7 @@ const classes = {
     return `${classesMap[device]} m-xl bg-white rounded-lg z-10`
   },
   title:
-    'flex items-center justify-between h-[88px] px-l bg-violet-600 rounded-t-lg',
+    'flex self-center items-center justify-between h-[88px] px-l bg-violet-600 rounded-t-lg',
   titleContent: 'text-white',
   bodyContent: 'p-l'
 }
@@ -46,7 +46,10 @@ export const Modal: FC<ModalProps> = ({
       <section className={classes.modal(device)}>
         <section className={classes.title}>
           <h3 className={classes.titleContent}>{title}</h3>
-          <span onClick={() => setIsOpen(false)}>
+          <span
+            className="cursor-pointer hover:opacity-50"
+            onClick={() => setIsOpen(false)}
+          >
             <Icon type={IconType.cancel} />
           </span>
         </section>
