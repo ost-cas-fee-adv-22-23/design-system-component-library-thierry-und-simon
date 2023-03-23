@@ -18,6 +18,7 @@ export type ButtonProps = {
   color: ButtonColor
   label: string
   children?: ReactNode
+  onClick: any
 }
 
 const classes = {
@@ -54,6 +55,7 @@ export const Button: FC<ButtonProps> = ({
   return (
     <button
       type="button"
+      onClick={() => onClick()}
       className={`${classes.wrapperGeneral} ${classes.spacing(
         size
       )} ${classes.colors(color)}`}
