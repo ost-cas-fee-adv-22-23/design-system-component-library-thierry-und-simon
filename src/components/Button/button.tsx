@@ -53,6 +53,7 @@ export const Button: FC<ButtonProps> = ({
   onClick,
   ...props
 }) => {
+  console.log('test')
   return (
     <button
       type="button"
