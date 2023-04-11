@@ -30,7 +30,7 @@ export const FileUpload: FC<FileUploadProps> = ({ setFile }) => {
         children={<DragDropContent />}
       />
 
-      <label
+      {/* <label
         className="flex flex-row justify-center w-full bg-slate-300 py-3 mt-4 text-sm text-slate-500 font placeholder:text-slate-500 rounded border  outline outline-transparent outline-2 hover:outline-slate-300 focus:border-2 focus:outline-none focus:outline-violet-600"
         htmlFor="file-upload"
       >
@@ -42,9 +42,9 @@ export const FileUpload: FC<FileUploadProps> = ({ setFile }) => {
         className="hidden"
         type="file"
         onChange={(e) => {
-          setFile(e.target?.files[0])
+          setFile(e?.target?.files[0])
         }}
-      />
+      /> */}
     </div>
   )
 }
