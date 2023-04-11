@@ -6,6 +6,8 @@ export type TextareaProps = {
   id?: string
   placeholder?: string
   rows: number
+  onChange: any
+  value: string
 }
 
 const classes = {
@@ -19,7 +21,9 @@ export const Textarea: FC<TextareaProps> = ({
   placeholder,
   rows = 5,
   label,
-  id
+  id,
+  value,
+  onChange
 }) => {
   return (
     <>
@@ -34,6 +38,8 @@ export const Textarea: FC<TextareaProps> = ({
           rows={rows}
           placeholder={placeholder}
           id={id}
+          onChange={onChange}
+          value={value}
         ></textarea>
       </div>
     </>
