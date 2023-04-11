@@ -22,6 +22,8 @@ import SvgShare from '../../Icons/Share'
 import SvgTime from '../../Icons/Time'
 import SvgUpload from '../../Icons/Upload'
 import SvgViews from '../../Icons/Views'
+import SvgLogoWide from '../../Icons/LogoWide'
+import SvgLogoNarrow from '../../Icons/LogoNarrow'
 
 export enum IconType {
   mumble = 'SvgMumble',
@@ -46,7 +48,9 @@ export enum IconType {
   expand = 'SvgExpand',
   share = 'SvgShare',
   upload = 'SvgUpload',
-  time = 'SvgTime'
+  time = 'SvgTime',
+  logo_narrow= 'SvgLogoNarrow',
+  logo_wide= 'SvgLogoWide',
 }
 
 export type IconProps = {
@@ -78,7 +82,9 @@ export const Icon: FC<IconProps> = ({ type, size = 16 }) => {
     SvgShare,
     SvgTime,
     SvgUpload,
-    SvgViews
+    SvgViews,
+    SvgLogoWide,
+    SvgLogoNarrow
   }
 
   const SvgIcon = icons[type]
