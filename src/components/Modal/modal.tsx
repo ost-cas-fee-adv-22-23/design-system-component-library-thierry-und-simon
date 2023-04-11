@@ -17,7 +17,7 @@ export type ModalProps = {
 const classes = {
   wrapper: (open: boolean) => {
     return open
-      ? 'z-10 fixed flex justify-center align-center w-full h-full top-0 left-0 bg-transparent'
+      ? 'z-10 fixed flex justify-center items-center w-full h-full top-0 left-0 bg-transparent'
       : 'hidden'
   },
   modal: (device: ModalDevice) => {
