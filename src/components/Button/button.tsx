@@ -18,7 +18,7 @@ export type ButtonProps = {
   color: ButtonColor
   label: string
   children?: ReactNode
-  onClick?: any
+  onClick?: () => void
 }
 
 const classes = {
@@ -53,7 +53,6 @@ export const Button: FC<ButtonProps> = ({
   onClick,
   ...props
 }) => {
-  console.log('test')
   return (
     <button
       type="button"

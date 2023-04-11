@@ -6,7 +6,7 @@ export type TextareaProps = {
   id?: string
   placeholder?: string
   rows: number
-  onChange: any
+  onChange: () => void
   value: string
 }
 
