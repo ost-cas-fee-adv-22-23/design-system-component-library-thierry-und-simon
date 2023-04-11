@@ -9,9 +9,10 @@ export type InputProps = {
   placeholder?: string
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
   value?: string
+  name: string
 }
 
-export const Input: FC<InputProps> = ({ label, type, id, placeholder, onChange }) => {
+export const Input: FC<InputProps> = ({ label, type, id, placeholder, onChange, name }) => {
   const [showPassword, setShowPassword] = React.useState(false)
 
   return (
@@ -35,6 +36,7 @@ export const Input: FC<InputProps> = ({ label, type, id, placeholder, onChange }
           placeholder={placeholder}
           onChange={onChange}
           value={''}
+          name={name}
         />
       </div>
     </div>
