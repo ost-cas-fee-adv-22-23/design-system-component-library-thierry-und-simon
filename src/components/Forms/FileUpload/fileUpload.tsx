@@ -3,8 +3,8 @@ import { Icon, IconType } from '../../Icon/icon'
 import { FileUploader } from 'react-drag-drop-files'
 
 export type FileUploadProps = {
-  file?: any
-  setFile?: any
+  file?: React.ChangeEvent<HTMLInputElement>
+  setFile?: () => void
 }
 
 const DragDropContent = function () {
