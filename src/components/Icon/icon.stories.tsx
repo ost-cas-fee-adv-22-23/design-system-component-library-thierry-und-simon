@@ -30,7 +30,9 @@ export default {
         'SvgShare',
         'SvgTime',
         'SvgUpload',
-        'SvgViews'
+        'SvgViews',
+        'SvgLogoWide',
+        'SvgLogoNarrow'
       ],
       control: { type: 'select' }
     },
