@@ -16,9 +16,9 @@ export enum ButtonColor {
 export type ButtonProps = {
   size: ButtonSize
   color: ButtonColor
-  label: string
+  label?: string
   children?: ReactNode
-  onClick?: any
+  onClick?: () => void
 }
 
 const classes = {
@@ -57,7 +57,7 @@ export const Button: FC<ButtonProps> = ({
   return (
     <button
       type="button"
-      onClick={() => onClick()}
+      onClick={() => onClick}
       className={`${classes.wrapperGeneral} ${classes.spacing(
         size
       )} ${classes.colors(color)}`}
