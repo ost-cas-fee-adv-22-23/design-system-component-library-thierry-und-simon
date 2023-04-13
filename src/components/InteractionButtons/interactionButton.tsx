@@ -103,15 +103,19 @@ const CopyContent: FC<ContentProps> = ({ onClick }) => {
   )
 }
 
-export const InteractionButton: FC<IconLinkProps> = ({ type, count = 0 }) => {
+export const InteractionButton: FC<IconLinkProps> = ({
+  type,
+  count = 0,
+  onClick
+}) => {
   return (
     <>
       {type === InteractionButtonType.like ? (
-        <LikeContent count={count} />
+        <LikeContent count={count} onClick={onClick} />
       ) : type === InteractionButtonType.comment ? (
-        <CommentContent count={count} />
+        <CommentContent count={count} onClick={onClick} />
       ) : (
-        <CopyContent count={count} />
+        <CopyContent count={count} onClick={onClick} />
       )}
     </>
   )
