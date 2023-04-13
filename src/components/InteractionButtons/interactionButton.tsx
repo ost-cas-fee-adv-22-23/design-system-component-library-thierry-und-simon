@@ -19,13 +19,19 @@ type ContentProps = {
   onClick: () => void
 }
 
+type Liked = {
+  hasLiked: boolean
+}
+
+type LikeProps = ContentProps & Liked
+
 const classes = {
   wrapperGeneral:
     'flex items-center gap-x-2 px-3 py-2 rounded-2xl transition-colors duration-300'
 }
 
-const LikeContent: FC<ContentProps> = ({ count, onClick }) => {
-  const [liked, setLiked] = useState(false)
+const LikeContent: FC<LikeProps> = ({ count, onClick, hasLiked }) => {
+  const [liked, setLiked] = useState(hasLiked)
   const [localCount, setLocalCount] = useState(count)
 
   useEffect(() => {
