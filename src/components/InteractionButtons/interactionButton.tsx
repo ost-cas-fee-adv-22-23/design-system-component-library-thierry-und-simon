@@ -26,7 +26,11 @@ const classes = {
     'flex items-center gap-x-2 px-3 py-2 rounded-2xl transition-colors duration-300'
 }
 
-const LikeContent: FC<ContentProps> = ({ count, onClick, hasLiked }) => {
+const LikeContent: FC<ContentProps> = ({
+  count,
+  onClick,
+  hasLiked = false
+}) => {
   const [liked, setLiked] = useState(hasLiked)
   const [localCount, setLocalCount] = useState(count)
 
@@ -35,6 +39,7 @@ const LikeContent: FC<ContentProps> = ({ count, onClick, hasLiked }) => {
   }, [count])
 
   const handleLike = () => {
+    console.log(liked)
     if (!liked) {
       setLiked(true)
       setLocalCount(localCount + 1)
@@ -49,15 +54,13 @@ const LikeContent: FC<ContentProps> = ({ count, onClick, hasLiked }) => {
   return (
     <button
       className={`${classes.wrapperGeneral}  hover:bg-pink-50 ${
-        localCount > 0 || liked
+        liked
           ? 'text-pink-900 hover:text-pink-600'
           : 'text-slate-600 hover:text-pink-600'
       }`}
       onClick={() => handleLike()}
     >
-      <Icon
-        type={localCount === 0 || !liked ? IconType.like : IconType.like_dark}
-      />
+      <Icon type={!liked ? IconType.like : IconType.like_dark} />
       <p>
         {localCount === 0
           ? 'Like'
@@ -114,7 +117,7 @@ export const InteractionButton: FC<IconLinkProps> = ({
   return (
     <>
       {type === InteractionButtonType.like ? (
-        <LikeContent count={count} onClick={onClick} hasLiked />
+        <LikeContent count={count} onClick={onClick} hasLiked={hasLiked} />
       ) : type === InteractionButtonType.comment ? (
         <CommentContent count={count} onClick={onClick} />
       ) : (
