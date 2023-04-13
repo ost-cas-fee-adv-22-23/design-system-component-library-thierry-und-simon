@@ -11,14 +11,14 @@ type IconLinkProps = {
   type: InteractionButtonType
   count?: number
   onClick: () => void
-  hasLiked: boolean
+  hasLiked?: boolean
 }
 
 type ContentProps = {
   count: number
   color?: string
   onClick: () => void
-  hasLiked: boolean
+  hasLiked?: boolean
 }
 
 const classes = {
