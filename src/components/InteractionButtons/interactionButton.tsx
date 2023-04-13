@@ -11,26 +11,22 @@ type IconLinkProps = {
   type: InteractionButtonType
   count?: number
   onClick: () => void
+  hasLiked: boolean
 }
 
 type ContentProps = {
   count: number
   color?: string
   onClick: () => void
-}
-
-type Liked = {
   hasLiked: boolean
 }
-
-type LikeProps = ContentProps & Liked
 
 const classes = {
   wrapperGeneral:
     'flex items-center gap-x-2 px-3 py-2 rounded-2xl transition-colors duration-300'
 }
 
-const LikeContent: FC<LikeProps> = ({ count, onClick, hasLiked }) => {
+const LikeContent: FC<ContentProps> = ({ count, onClick, hasLiked }) => {
   const [liked, setLiked] = useState(hasLiked)
   const [localCount, setLocalCount] = useState(count)
 
@@ -112,12 +108,13 @@ const CopyContent: FC<ContentProps> = ({ onClick }) => {
 export const InteractionButton: FC<IconLinkProps> = ({
   type,
   count = 0,
-  onClick
+  onClick,
+  hasLiked
 }) => {
   return (
     <>
       {type === InteractionButtonType.like ? (
-        <LikeContent count={count} onClick={onClick} />
+        <LikeContent count={count} onClick={onClick} hasLiked />
       ) : type === InteractionButtonType.comment ? (
         <CommentContent count={count} onClick={onClick} />
       ) : (
