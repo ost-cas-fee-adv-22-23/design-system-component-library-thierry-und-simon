@@ -30,7 +30,7 @@ export const UserImage: FC<UserImageProps> = ({ type, imgSrc }) => {
   return (
     <div className={`${classes.wrapperGeneral} ${classes.sizes(type)}`}>
       <div className="absolute top-0 bottom-0 w-full rounded-full overflow-hidden">
-        <img src={imgSrc} />
+        <img className="object-cover h-full" src={imgSrc} />
       </div>
 
       {type == UserImageSizeType.XL && (
