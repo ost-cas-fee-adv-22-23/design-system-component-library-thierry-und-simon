@@ -63,7 +63,7 @@ export const User: FC<UserProps> = ({
                   text={userName}
                 />
               </div>
-              {type != SizeType.XL && (
+              {type != SizeType.XL && type != SizeType.SM && (
                 <div className="ml-s">
                   <IconLink
                     type={IconLinkType.slate}
