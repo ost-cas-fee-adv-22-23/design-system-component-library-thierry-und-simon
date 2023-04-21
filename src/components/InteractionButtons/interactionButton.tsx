@@ -10,11 +10,15 @@ export enum InteractionButtonType {
 type IconLinkProps = {
   type: InteractionButtonType
   count?: number
+  onClick: () => void
+  hasLiked?: boolean
 }
 
 type ContentProps = {
   count: number
   color?: string
+  onClick: () => void
+  hasLiked?: boolean
 }
 
 const classes = {
@@ -22,8 +26,12 @@ const classes = {
     'flex items-center gap-x-2 px-3 py-2 rounded-2xl transition-colors duration-300'
 }
 
-const LikeContent: FC<ContentProps> = ({ count }) => {
-  const [liked, setLiked] = useState(false)
+const LikeContent: FC<ContentProps> = ({
+  count,
+  onClick,
+  hasLiked = false
+}) => {
+  const [liked, setLiked] = useState(hasLiked)
   const [localCount, setLocalCount] = useState(count)
 
   useEffect(() => {
@@ -31,6 +39,7 @@ const LikeContent: FC<ContentProps> = ({ count }) => {
   }, [count])
 
   const handleLike = () => {
+    console.log(liked)
     if (!liked) {
       setLiked(true)
       setLocalCount(localCount + 1)
@@ -38,20 +47,20 @@ const LikeContent: FC<ContentProps> = ({ count }) => {
       setLiked(false)
       setLocalCount(localCount - 1)
     }
+
+    onClick()
   }
 
   return (
     <button
       className={`${classes.wrapperGeneral}  hover:bg-pink-50 ${
-        localCount > 0 || liked
+        liked
           ? 'text-pink-900 hover:text-pink-600'
           : 'text-slate-600 hover:text-pink-600'
       }`}
       onClick={() => handleLike()}
     >
-      <Icon
-        type={localCount === 0 || !liked ? IconType.like : IconType.like_dark}
-      />
+      <Icon type={!liked ? IconType.like : IconType.like_dark} />
       <p>
         {localCount === 0
           ? 'Like'
@@ -61,10 +70,11 @@ const LikeContent: FC<ContentProps> = ({ count }) => {
   )
 }
 
-const CommentContent: FC<ContentProps> = ({ count }) => {
+const CommentContent: FC<ContentProps> = ({ count, onClick }) => {
   return (
     <button
       className={`${classes.wrapperGeneral}  hover:bg-violet-50 text-slate-600 hover:text-violet-600`}
+      onClick={onClick}
     >
       <Icon type={count === 0 ? IconType.bubble : IconType.bubble_dark} />
       <p>{count === 0 ? 'Comment' : `${count} Comments`}</p>
@@ -72,7 +82,7 @@ const CommentContent: FC<ContentProps> = ({ count }) => {
   )
 }
 
-const CopyContent: FC<ContentProps> = () => {
+const CopyContent: FC<ContentProps> = ({ onClick }) => {
   const [clicked, setClicked] = useState(false)
 
   function handleClick() {
@@ -81,6 +91,8 @@ const CopyContent: FC<ContentProps> = () => {
     setTimeout(() => {
       setClicked(false)
     }, 1500)
+
+    onClick()
   }
 
   return (
@@ -96,15 +108,20 @@ const CopyContent: FC<ContentProps> = () => {
   )
 }
 
-export const InteractionButton: FC<IconLinkProps> = ({ type, count = 0 }) => {
+export const InteractionButton: FC<IconLinkProps> = ({
+  type,
+  count = 0,
+  onClick,
+  hasLiked
+}) => {
   return (
     <>
       {type === InteractionButtonType.like ? (
-        <LikeContent count={count} />
+        <LikeContent count={count} onClick={onClick} hasLiked={hasLiked} />
       ) : type === InteractionButtonType.comment ? (
-        <CommentContent count={count} />
+        <CommentContent count={count} onClick={onClick} />
       ) : (
-        <CopyContent count={count} />
+        <CopyContent count={count} onClick={onClick} />
       )}
     </>
   )

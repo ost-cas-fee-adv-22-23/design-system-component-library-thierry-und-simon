@@ -11,7 +11,7 @@ export type ModalProps = {
   title: string
   children: React.ReactNode
   isOpen: boolean
-  setIsOpen: any
+  onCloseModal: () => void
 }
 
 const classes = {
@@ -38,7 +38,7 @@ export const Modal: FC<ModalProps> = ({
   title,
   device,
   isOpen = false,
-  setIsOpen
+  onCloseModal
 }) => {
   return (
     <div className={classes.wrapper(isOpen)}>
@@ -48,7 +48,7 @@ export const Modal: FC<ModalProps> = ({
           <h3 className={classes.titleContent}>{title}</h3>
           <span
             className="cursor-pointer hover:opacity-50"
-            onClick={() => setIsOpen(false)}
+            onClick={() => onCloseModal()}
           >
             <Icon type={IconType.cancel} />
           </span>
