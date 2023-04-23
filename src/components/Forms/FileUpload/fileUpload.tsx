@@ -4,7 +4,7 @@ import { FileUploader } from 'react-drag-drop-files'
 
 export type FileUploadProps = {
   file?: React.ChangeEvent<HTMLInputElement>
-  setFile?: () => void
+  setFile?: (e: any) => any
 }
 
 const DragDropContent = function () {
