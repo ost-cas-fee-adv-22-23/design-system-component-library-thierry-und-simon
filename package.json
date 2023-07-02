@@ -1,15 +1,75 @@
 {
-  "name": "@smartive-education/todo-insert-package-name-here",
+  "name": "@smartive-education/thierry-simon-mumble",
   "version": "0.0.0-development",
   "publishConfig": {
     "access": "public",
     "registry": "https://npm.pkg.github.com",
     "tag": "latest"
   },
-  "scripts": {
-    "build": "echo 'build'",
-    "build-storybook": "echo 'build storybook'"
+  "files": [
+    "dist",
+    "mumble-presets.js"
+  ],
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    },
+    "./tailwind": "./mumble-presets.js"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "scripts": {
+    "build:js": "tsc",
+    "build:types": "tsc --emitDeclarationOnly --declaration --declarationDir dist/types",
+    "build": "rm -rf ./dist && tsc",
+    "build-storybook": "build-storybook",
+    "storybook": "start-storybook -p 6006",
+    "svgr": "npx @svgr/cli -d src/Icons/ assets/ --typescript --icon --replace-attr-values '#475569={props.color}'",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prettier": "prettier --write .",
+    "prettier:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@storybook/addon-actions": "^6.5.13",
+    "@storybook/addon-essentials": "^6.5.13",
+    "@storybook/addon-interactions": "^6.5.13",
+    "@storybook/addon-links": "^6.5.13",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/builder-webpack4": "^6.5.13",
+    "@storybook/manager-webpack4": "^6.5.13",
+    "@storybook/react": "^6.5.13",
+    "@storybook/testing-library": "^0.0.13",
+    "@svgr/cli": "^6.5.1",
+    "@svgr/webpack": "^6.5.1",
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.48.2",
+    "@typescript-eslint/parser": "^5.48.2",
+    "autoprefixer": "^10.4.13",
+    "babel-loader": "^8.3.0",
+    "eslint": "^8.32.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-standard-with-typescript": "^30.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.32.1",
+    "postcss": "^8.4.19",
+    "prettier": "^2.8.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.2.4",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.7",
+    "@headlessui/tailwindcss": "^0.1.2",
+    "cross-env": "^7.0.3",
+    "dayjs": "^1.11.7",
+    "react-drag-drop-files": "^2.3.9",
+    "tsconfig-paths-webpack-plugin": "^4.0.0"
+  }
 }
