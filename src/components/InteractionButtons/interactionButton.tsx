@@ -114,12 +114,13 @@ export const InteractionButton: FC<IconLinkProps> = ({
   type,
   count = 0,
   onClick,
-  hasLiked
+  hasLiked,
+  ...props
 }) => {
   return (
     <>
       {type === InteractionButtonType.like ? (
-        <LikeContent count={count} onClick={onClick} hasLiked={hasLiked} />
+        <LikeContent count={count} onClick={onClick} hasLiked={hasLiked} {...props} />
       ) : type === InteractionButtonType.comment ? (
         <CommentContent count={count} onClick={onClick} />
       ) : (
