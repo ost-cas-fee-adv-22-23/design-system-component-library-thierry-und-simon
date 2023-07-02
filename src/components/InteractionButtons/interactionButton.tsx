@@ -29,7 +29,8 @@ const classes = {
 const LikeContent: FC<ContentProps> = ({
   count,
   onClick,
-  hasLiked = false
+  hasLiked = false,
+  ...props
 }) => {
   const [liked, setLiked] = useState(hasLiked)
   const [localCount, setLocalCount] = useState(count)
@@ -59,6 +60,7 @@ const LikeContent: FC<ContentProps> = ({
           : 'text-slate-600 hover:text-pink-600'
       }`}
       onClick={() => handleLike()}
+      {...props}
     >
       <Icon type={!liked ? IconType.like : IconType.like_dark} />
       <p>
